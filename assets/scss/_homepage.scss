@@ -4,12 +4,11 @@
   position: fixed;
   width: 50%;
   height: 100%;
-  border: 1px solid $border-color;
   z-index: 0;
 
   &.homepage-panel-tbc {
     left: 0;
-    border-right-width: .5px;
+    border-right: .5px solid $border-color;
     color: $tbc-green;
 
     .homepage-panel-img {
@@ -29,7 +28,7 @@
 
   &.homepage-panel-wotlk {
     right: 0;
-    border-left-width: .5px;
+    border-left: .5px solid $border-color;
     color: $wrath-blue;
 
     &:hover {
