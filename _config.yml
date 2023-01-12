@@ -21,6 +21,8 @@
 title: "WoWSims - WoW Classic Simulators"
 description: Welcome to WoWSims! This is a community-driven project to provide simulations for World of Warcraft® Classic™ Classes & Raids together with the leading theorycrafters and class representatives.
 
+include:
+  - _site
 plugins:
   - jekyll-seo-tag
 sass:
