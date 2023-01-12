@@ -23,6 +23,7 @@ description: Welcome to WoWSims! This is a community-driven project to provide s
 
 include:
   - node_modules
+  - vendor
 plugins:
   - jekyll-seo-tag
 sass:
