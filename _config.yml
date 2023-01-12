@@ -19,9 +19,7 @@
 # in the templates via {{ site.myvariable }}.
 
 title: "WoWSims - WoW Classic Simulators"
-description: >
-  Welcome to WoWSims! This is a community-driven project to provide simulations for World of Warcraft® Classic™
-  Classes & Raids together with the leading theorycrafters and class representatives.
+description: Welcome to WoWSims! This is a community-driven project to provide simulations for World of Warcraft® Classic™ Classes & Raids together with the leading theorycrafters and class representatives.
 
 plugins:
   - jekyll-seo-tag
