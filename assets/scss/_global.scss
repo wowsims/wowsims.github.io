@@ -1,0 +1,27 @@
+* {
+  letter-spacing: 1px;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  // Bootstrap adds padding-right when Modals open for some reason, causing popping
+  padding-right: 0 !important;
+  // Prevent browser scrollbars from adjusting page contents
+  margin-right: calc(-1 * (100vw - 100%));
+  overflow-x: hidden;
+  opacity: 0;
+  transition: opacity .15s linear;
+
+  &.ready {
+    opacity: 1;
+  }
+}
+
+main {
+  z-index: 1;
+  pointer-events: none;
+}

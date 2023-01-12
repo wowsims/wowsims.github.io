@@ -1,0 +1,254 @@
+@use "sass:map";
+
+.homepage-panel {
+  position: fixed;
+  width: 50%;
+  height: 100%;
+  border: 1px solid $border-color;
+  z-index: 0;
+
+  &.homepage-panel-tbc {
+    left: 0;
+    border-right-width: .5px;
+    color: $tbc-green;
+
+    .homepage-panel-img {
+      filter: brightness(20%);
+    }
+
+    &:hover {
+      .homepage-panel-img {
+        filter: brightness(35%);
+      }
+
+      .homepage-panel-link {
+        box-shadow: inset 0 0 4rem $tbc-green;
+      }
+    }
+  }
+
+  &.homepage-panel-wotlk {
+    right: 0;
+    border-left-width: .5px;
+    color: $wrath-blue;
+
+    &:hover {
+      .homepage-panel-img {
+        filter: brightness(150%);
+      }
+
+      .homepage-panel-link {
+        box-shadow: inset 0 0 4rem $wrath-blue;
+      }
+    }
+  }
+
+  .homepage-panel-img {
+    height: 80%;
+    width: 100%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: filter .15s ease-in-out;
+
+    &.homepage-image-tbc {
+      filter: brightness(20%);
+    }
+    
+    &.homepage-image-wrath {
+    }
+  }
+
+  .homepage-panel-block {
+    width: 100%;
+    height: 20%;
+    border-top: 1px solid $border-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .homepage-panel-link {
+    position: absolute;
+    inset: 0;
+    display: block;
+    transition: box-shadow .15s ease-in-out;
+  }
+}
+
+#homepage {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+
+  .homepage-header-container,
+  .homepage-content-container,
+  .homepage-footer-container {
+    padding-top: map-get($spacers, 4);
+    padding-bottom: map-get($spacers, 4);
+  }
+
+  .homepage-header {
+    .homepage-header-container {
+      display: flex;
+
+      .navbar-brand-container {
+        display: flex;
+
+        .wowsims-logo {
+          width: 75px;
+          margin-right: map-get($spacers, 3);
+        }
+  
+        .wowsims-title {
+          @extend .display-1;
+          @extend .fw-bold;
+          color: $primary;
+          margin: 0;
+        }
+      }
+
+      .homepage-header-collapse {
+        padding-top: map-get($spacers, 3);
+        padding-bottom: map-get($spacers, 3);
+        align-items: flex-end;
+        justify-content: flex-end;
+      }
+    }
+
+    .wrath-title {
+      color: $wrath-blue;
+      margin: 0;
+      font-weight: bold;
+    }
+  }
+
+  .homepage-content-container {
+    flex-direction: column;
+
+    .info-container {
+      padding-top: 20vh;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+
+      .wowsims-info {
+        @extend .fs-4;
+        width: 75%;
+        margin: 0;
+      }
+    }
+
+    .sim-links-container {
+      display: flex;
+      flex-direction: column;
+
+      .sim-links {
+        display: flex;
+        flex-wrap: wrap;
+
+        &:not(:last-child) {
+          margin-bottom: map-get($spacers, 5);
+        }
+
+        &> .sim-link, &> .sim-link-dropdown {
+          flex: 1 25%;
+          margin-right: 25%;
+        }
+
+        .raid-sim-link {
+          flex-grow: 0 !important;
+        }
+
+        .sim-link {
+          .sim-link-content {
+            .sim-link-label:first-of-type {
+              font-size: 1rem;
+            }
+
+            .sim-link-label:last-of-type {
+              font-size: 1.75rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  #homepage {
+    .homepage-content-container {
+      .info-container {
+        .wowsims-info {
+          width: 100%;
+        }
+      }
+
+      .sim-links-container {
+        margin-left: map-get($spacers, 3) * -1;
+        margin-right: map-get($spacers, 3) * -1;
+
+        .sim-links {
+          margin-bottom: 0 !important;
+
+          .sim-link, .sim-link-dropdown {
+            flex: 1 50%;
+            margin-right: 0 !important;
+          }
+
+          .sim-link-dropdown {
+            .dropdown-menu {
+              position: relative !important;
+              inset: 0 !important;
+              transform: none !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  #homepage {
+    .homepage-header-container,
+    .homepage-content-container,
+    .homepage-footer-container {
+      padding-top: map-get($spacers, 3);
+      padding-bottom: map-get($spacers, 3);
+    }
+
+    .homepage-header {
+      .homepage-header-container {
+        display: flex;
+  
+        .navbar-brand-container {
+          width: 100%;
+          justify-content: space-between;
+          align-items: flex-end;
+
+          .wowsims-logo {
+            width: 48px;
+          }
+        }
+      }
+    }
+
+    .homepage-content-container {
+      .info-container {
+        margin-bottom: map-get($spacers, 3);
+      }
+
+      .sim-links-container {
+        .sim-links {
+          .sim-link, .sim-link-dropdown {
+            flex: 1 100% !important;
+          }
+        }
+      }
+    }
+  }
+}
