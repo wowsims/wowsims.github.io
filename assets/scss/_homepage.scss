@@ -5,6 +5,7 @@
   width: 50%;
   height: 100%;
   z-index: 0;
+  overflow: hidden;
 
   &.homepage-panel-tbc {
     left: 0;
@@ -60,10 +61,8 @@
 
   .homepage-panel-img {
     height: 80%;
-    width: 100%;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
+    width: 150%;
+    margin-left: -25%;
     transition: filter .15s ease-in-out;
 
     &.homepage-image-tbc {
