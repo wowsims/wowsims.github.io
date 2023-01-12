@@ -15,6 +15,10 @@
       filter: brightness(20%);
     }
 
+    .homepage-panel-block {
+      background: mix(black, $tbc-green, 90%);
+    }
+
     &:hover {
       .homepage-panel-img {
         filter: brightness(35%);
@@ -30,6 +34,10 @@
     right: 0;
     border-left: .5px solid $border-color;
     color: $wrath-blue;
+
+    .homepage-panel-block {
+      background: mix(black, $wrath-blue, 90%);
+    }
 
     &:hover {
       .homepage-panel-img {

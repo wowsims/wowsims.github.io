@@ -2843,9 +2843,11 @@ main { z-index: 1; pointer-events: none; }
 .homepage-panel { position: fixed; width: 50%; height: 100%; z-index: 0; }
 .homepage-panel.homepage-panel-tbc { left: 0; border-right: 0.5px solid dimgrey; color: #a3e268; }
 .homepage-panel.homepage-panel-tbc .homepage-panel-img { filter: brightness(20%); }
+.homepage-panel.homepage-panel-tbc .homepage-panel-block { background: #10170a; }
 .homepage-panel.homepage-panel-tbc:hover .homepage-panel-img { filter: brightness(35%); }
 .homepage-panel.homepage-panel-tbc:hover .homepage-panel-link { box-shadow: inset 0 0 4rem #a3e268; }
 .homepage-panel.homepage-panel-wotlk { right: 0; border-left: 0.5px solid dimgrey; color: #7FCBD8; }
+.homepage-panel.homepage-panel-wotlk .homepage-panel-block { background: #0d1416; }
 .homepage-panel.homepage-panel-wotlk:hover .homepage-panel-img { filter: brightness(150%); }
 .homepage-panel.homepage-panel-wotlk:hover .homepage-panel-link { box-shadow: inset 0 0 4rem #7FCBD8; }
 .homepage-panel .homepage-panel-img { height: 80%; width: 100%; background-position: 50%; background-repeat: no-repeat; background-size: cover; transition: filter .15s ease-in-out; }
