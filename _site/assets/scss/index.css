@@ -2885,7 +2885,7 @@ main { z-index: 1; pointer-events: none; }
   #homepage .homepage-content-container .sim-links-container .sim-links { margin-bottom: 0 !important; }
   #homepage .homepage-content-container .sim-links-container .sim-links .sim-link, #homepage .homepage-content-container .sim-links-container .sim-links .sim-link-dropdown { flex: 1 50%; margin-right: 0 !important; }
   #homepage .homepage-content-container .sim-links-container .sim-links .sim-link-dropdown .dropdown-menu { position: relative !important; inset: 0 !important; transform: none !important; } }
-@media (max-width: 767.98px) { .expansion-panels { flex-direction: column; }
+@media (max-width: 767.98px) { .expansion-panels { height: unset; flex-direction: column; }
   .expansion-panels .expansion-panel { border: none; }
   .expansion-panels .expansion-panel .expansion-panel-img { height: 80vh; }
   .expansion-panels .expansion-panel .expansion-panel-block { height: 20vh; border-top: 0.5px solid dimgrey; border-bottom: 0.5px solid dimgrey; }

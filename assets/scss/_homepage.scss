@@ -246,6 +246,7 @@
 
 @include media-breakpoint-down(md) {
   .expansion-panels {
+    height: unset;
     flex-direction: column;
 
     .expansion-panel {
