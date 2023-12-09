@@ -2840,12 +2840,13 @@ body.ready { opacity: 1; }
 main { z-index: 1; pointer-events: none; }
 
 @use "sass:map";
-.expansion-panels { position: absolute; width: 100%; height: 100%; display: flex; z-index: 0; }
+.expansion-panels { position: absolute; width: 100%; height: 100%; display: flex; z-index: 0; overflow: hidden; }
 .expansion-panels .expansion-panel { --expansion-color: #e0a335; position: relative; flex: 1; color: var(--expansion-color); }
 .expansion-panels .expansion-panel:not(:last-child) { border-right: 0.5px solid dimgrey; }
 .expansion-panels .expansion-panel:hover .expansion-panel-link { box-shadow: inset 0 0 4rem var(--expansion-color); }
 .expansion-panels .expansion-panel.expansion-panel-sod { --expansion-color: #e0a335; }
 .expansion-panels .expansion-panel.expansion-panel-sod:hover .expansion-panel-img { filter: brightness(35%); }
+.expansion-panels .expansion-panel.expansion-panel-sod .homepage-panel-block { text-shadow: 0 0 1rem #7FCBD8; }
 .expansion-panels .expansion-panel.expansion-panel-sod .expansion-panel-img { filter: brightness(20%); }
 .expansion-panels .expansion-panel.expansion-panel-sod .expansion-panel-block { background: #161005; }
 .expansion-panels .expansion-panel.expansion-panel-tbc { --expansion-color: #a3e268; }

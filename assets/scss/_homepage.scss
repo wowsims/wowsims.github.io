@@ -6,6 +6,7 @@
   height: 100%;
   display: flex;
   z-index: 0;
+  overflow: hidden;
 
   .expansion-panel {
     --expansion-color: #{$brand-color};
@@ -31,6 +32,10 @@
         .expansion-panel-img {
           filter: brightness(35%);
         }
+      }
+      
+      .homepage-panel-block {
+        text-shadow: 0 0 1rem $wrath-blue;
       }
 
       .expansion-panel-img {
