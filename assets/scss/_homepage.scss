@@ -1,86 +1,107 @@
 @use "sass:map";
 
-.homepage-panel {
-  position: fixed;
-  width: 50%;
+.expansion-panels {
+  position: absolute;
+  width: 100%;
   height: 100%;
+  display: flex;
   z-index: 0;
 
-  &.homepage-panel-tbc {
-    left: 0;
-    border-right: .5px solid $border-color;
-    color: $tbc-green;
+  .expansion-panel {
+    --expansion-color: #{$brand-color};
 
-    .homepage-panel-img {
-      filter: brightness(20%);
-    }
+    position: relative;
+    flex: 1;
+    color: var(--expansion-color);
 
-    .homepage-panel-block {
-      background: mix(black, $tbc-green, 90%);
-    }
-
-    &:hover {
-      .homepage-panel-img {
-        filter: brightness(35%);
-      }
-
-      .homepage-panel-link {
-        box-shadow: inset 0 0 4rem $tbc-green;
-      }
-    }
-  }
-
-  &.homepage-panel-wotlk {
-    right: 0;
-    border-left: .5px solid $border-color;
-    color: $wrath-blue;
-
-    .homepage-panel-block {
-      background: mix(black, $wrath-blue, 90%);
+    &:not(:last-child) {
+      border-right: .5px solid $border-color;
     }
 
     &:hover {
-      .homepage-panel-img {
-        filter: brightness(150%);
-      }
-
-      .homepage-panel-link {
-        box-shadow: inset 0 0 4rem $wrath-blue;
+      .expansion-panel-link {
+        box-shadow: inset 0 0 4rem var(--expansion-color);
       }
     }
-  }
 
-  .homepage-panel-img {
-    height: 80%;
-    width: 100%;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    transition: filter .15s ease-in-out;
+    &.expansion-panel-sod {
+      --expansion-color: #{$brand-color};
 
-    &.homepage-image-tbc {
-      filter: brightness(20%);
+      &:hover {
+        .expansion-panel-img {
+          filter: brightness(35%);
+        }
+      }
+
+      .expansion-panel-img {
+        filter: brightness(20%);
+      }
+
+      .expansion-panel-block {
+        background: mix(black, $brand-color, 90%);
+      }
     }
-    
-    &.homepage-image-wrath {
+  
+    &.expansion-panel-tbc {
+      --expansion-color: #{$tbc-green};
+  
+      &:hover {
+        .expansion-panel-img {
+          filter: brightness(35%);
+        }
+      }
+
+      .expansion-panel-img {
+        filter: brightness(20%);
+      }
+
+      .expansion-panel-block {
+        background: mix(black, $tbc-green, 90%);
+      }
     }
-  }
+  
+    &.expansion-panel-wotlk {
+      --expansion-color: #{$wrath-blue};
+  
+      &:hover {
+        .expansion-panel-img {
+          filter: brightness(150%);
+        }
+      }
 
-  .homepage-panel-block {
-    width: 100%;
-    height: 20%;
-    border-top: 1px solid $border-color;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+      .expansion-panel-block {
+        background: mix(black, $wrath-blue, 90%);
+      }
+    }
+  
+    .expansion-panel-img {
+      height: 80%;
+      width: 100%;
+      object-fit: cover;
+      transition: filter .15s ease-in-out;
+  
+      &.homepage-image-tbc {
+        filter: brightness(20%);
+      }
+    }
+  
+    .expansion-panel-block {
+      width: 100%;
+      height: 20%;
+      border-top: 1px solid $border-color;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
 
-  .homepage-panel-link {
-    position: absolute;
-    inset: 0;
-    display: block;
-    transition: box-shadow .15s ease-in-out;
+    .expansion-panel-link {
+      position: absolute;
+      inset: 0;
+      display: block;
+      transition: box-shadow .15s ease-in-out;
+    }
   }
 }
 
@@ -105,7 +126,7 @@
         display: flex;
 
         .wowsims-logo {
-          width: 75px;
+          width: 6rem;
           margin-right: map-get($spacers, 3);
         }
   
@@ -139,7 +160,6 @@
       padding-top: 20vh;
       display: flex;
       justify-content: center;
-      text-align: center;
 
       .wowsims-info {
         @extend .fs-4;
@@ -220,6 +240,24 @@
 }
 
 @include media-breakpoint-down(md) {
+  .expansion-panels {
+    flex-direction: column;
+
+    .expansion-panel {
+      border: none;
+
+      .expansion-panel-img {
+        height: 80vh;
+      }
+
+      .expansion-panel-block {
+        height: 20vh;
+        border-top: .5px solid $border-color;
+        border-bottom: .5px solid $border-color;
+      }
+    }
+  }
+
   #homepage {
     .homepage-header-container,
     .homepage-content-container,

@@ -2840,31 +2840,36 @@ body.ready { opacity: 1; }
 main { z-index: 1; pointer-events: none; }
 
 @use "sass:map";
-.homepage-panel { position: fixed; width: 50%; height: 100%; z-index: 0; }
-.homepage-panel.homepage-panel-tbc { left: 0; border-right: 0.5px solid dimgrey; color: #a3e268; }
-.homepage-panel.homepage-panel-tbc .homepage-panel-img { filter: brightness(20%); }
-.homepage-panel.homepage-panel-tbc .homepage-panel-block { background: #10170a; }
-.homepage-panel.homepage-panel-tbc:hover .homepage-panel-img { filter: brightness(35%); }
-.homepage-panel.homepage-panel-tbc:hover .homepage-panel-link { box-shadow: inset 0 0 4rem #a3e268; }
-.homepage-panel.homepage-panel-wotlk { right: 0; border-left: 0.5px solid dimgrey; color: #7FCBD8; }
-.homepage-panel.homepage-panel-wotlk .homepage-panel-block { background: #0d1416; }
-.homepage-panel.homepage-panel-wotlk:hover .homepage-panel-img { filter: brightness(150%); }
-.homepage-panel.homepage-panel-wotlk:hover .homepage-panel-link { box-shadow: inset 0 0 4rem #7FCBD8; }
-.homepage-panel .homepage-panel-img { height: 80%; width: 100%; background-position: 50%; background-repeat: no-repeat; background-size: cover; transition: filter .15s ease-in-out; }
-.homepage-panel .homepage-panel-img.homepage-image-tbc { filter: brightness(20%); }
-.homepage-panel .homepage-panel-block { width: 100%; height: 20%; border-top: 1px solid dimgrey; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-.homepage-panel .homepage-panel-link { position: absolute; inset: 0; display: block; transition: box-shadow .15s ease-in-out; }
+.expansion-panels { position: absolute; width: 100%; height: 100%; display: flex; z-index: 0; }
+.expansion-panels .expansion-panel { --expansion-color: #e0a335; position: relative; flex: 1; color: var(--expansion-color); }
+.expansion-panels .expansion-panel:not(:last-child) { border-right: 0.5px solid dimgrey; }
+.expansion-panels .expansion-panel:hover .expansion-panel-link { box-shadow: inset 0 0 4rem var(--expansion-color); }
+.expansion-panels .expansion-panel.expansion-panel-sod { --expansion-color: #e0a335; }
+.expansion-panels .expansion-panel.expansion-panel-sod:hover .expansion-panel-img { filter: brightness(35%); }
+.expansion-panels .expansion-panel.expansion-panel-sod .expansion-panel-img { filter: brightness(20%); }
+.expansion-panels .expansion-panel.expansion-panel-sod .expansion-panel-block { background: #161005; }
+.expansion-panels .expansion-panel.expansion-panel-tbc { --expansion-color: #a3e268; }
+.expansion-panels .expansion-panel.expansion-panel-tbc:hover .expansion-panel-img { filter: brightness(35%); }
+.expansion-panels .expansion-panel.expansion-panel-tbc .expansion-panel-img { filter: brightness(20%); }
+.expansion-panels .expansion-panel.expansion-panel-tbc .expansion-panel-block { background: #10170a; }
+.expansion-panels .expansion-panel.expansion-panel-wotlk { --expansion-color: #7FCBD8; }
+.expansion-panels .expansion-panel.expansion-panel-wotlk:hover .expansion-panel-img { filter: brightness(150%); }
+.expansion-panels .expansion-panel.expansion-panel-wotlk .expansion-panel-block { background: #0d1416; }
+.expansion-panels .expansion-panel .expansion-panel-img { height: 80%; width: 100%; object-fit: cover; transition: filter .15s ease-in-out; }
+.expansion-panels .expansion-panel .expansion-panel-img.homepage-image-tbc { filter: brightness(20%); }
+.expansion-panels .expansion-panel .expansion-panel-block { width: 100%; height: 20%; border-top: 1px solid dimgrey; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.expansion-panels .expansion-panel .expansion-panel-link { position: absolute; inset: 0; display: block; transition: box-shadow .15s ease-in-out; }
 
 #homepage { height: 100%; display: flex; flex-direction: column; }
 #homepage .homepage-header-container, #homepage .homepage-content-container, #homepage .homepage-footer-container { padding-top: 1.5rem; padding-bottom: 1.5rem; }
 #homepage .homepage-header .homepage-header-container { display: flex; }
 #homepage .homepage-header .homepage-header-container .navbar-brand-container { display: flex; }
-#homepage .homepage-header .homepage-header-container .navbar-brand-container .wowsims-logo { width: 75px; margin-right: 1rem; }
+#homepage .homepage-header .homepage-header-container .navbar-brand-container .wowsims-logo { width: 6rem; margin-right: 1rem; }
 #homepage .homepage-header .homepage-header-container .navbar-brand-container .wowsims-title { color: #e0a335; margin: 0; }
 #homepage .homepage-header .homepage-header-container .homepage-header-collapse { padding-top: 1rem; padding-bottom: 1rem; align-items: flex-end; justify-content: flex-end; }
 #homepage .homepage-header .wrath-title { color: #7FCBD8; margin: 0; font-weight: bold; }
 #homepage .homepage-content-container { flex-direction: column; }
-#homepage .homepage-content-container .info-container { padding-top: 20vh; display: flex; justify-content: center; text-align: center; }
+#homepage .homepage-content-container .info-container { padding-top: 20vh; display: flex; justify-content: center; }
 #homepage .homepage-content-container .info-container .wowsims-info { width: 75%; margin: 0; }
 #homepage .homepage-content-container .sim-links-container { display: flex; flex-direction: column; }
 #homepage .homepage-content-container .sim-links-container .sim-links { display: flex; flex-wrap: wrap; }
@@ -2879,7 +2884,11 @@ main { z-index: 1; pointer-events: none; }
   #homepage .homepage-content-container .sim-links-container .sim-links { margin-bottom: 0 !important; }
   #homepage .homepage-content-container .sim-links-container .sim-links .sim-link, #homepage .homepage-content-container .sim-links-container .sim-links .sim-link-dropdown { flex: 1 50%; margin-right: 0 !important; }
   #homepage .homepage-content-container .sim-links-container .sim-links .sim-link-dropdown .dropdown-menu { position: relative !important; inset: 0 !important; transform: none !important; } }
-@media (max-width: 767.98px) { #homepage .homepage-header-container, #homepage .homepage-content-container, #homepage .homepage-footer-container { padding-top: 1rem; padding-bottom: 1rem; }
+@media (max-width: 767.98px) { .expansion-panels { flex-direction: column; }
+  .expansion-panels .expansion-panel { border: none; }
+  .expansion-panels .expansion-panel .expansion-panel-img { height: 80vh; }
+  .expansion-panels .expansion-panel .expansion-panel-block { height: 20vh; border-top: 0.5px solid dimgrey; border-bottom: 0.5px solid dimgrey; }
+  #homepage .homepage-header-container, #homepage .homepage-content-container, #homepage .homepage-footer-container { padding-top: 1rem; padding-bottom: 1rem; }
   #homepage .homepage-header .homepage-header-container { display: flex; }
   #homepage .homepage-header .homepage-header-container .navbar-brand-container { width: 100%; justify-content: space-between; align-items: flex-end; }
   #homepage .homepage-header .homepage-header-container .navbar-brand-container .wowsims-logo { width: 48px; }
