@@ -5,7 +5,7 @@
 // individual component pages in the Bootstrap 5.2 docs for relevant variable usage.
 
 // Custom theme color mapping
-$brand-color: #e0a335;
+$brand: #e0a335;
 
 $death-knight: rgb(194, 46, 70);
 $druid:        rgb(255, 125, 10);
@@ -25,14 +25,22 @@ $class-colors: (
   "mage":         $mage,
   "paladin":      $paladin,
   "priest":       $priest,
-  "raid":         $brand-color,
+  "raid":         $brand,
   "rogue":        $rogue,
   "shaman":       $shaman,
   "warlock":      $warlock,
   "warrior":      $warrior,
 );
 
+$custom-breakpoints: (
+  xxxl: 1600px,
+  1080p: 1900px,
+  1440p: 2500px,
+  4k: 3800px,
+);
+
 $theme-colors: map-merge($theme-colors, $class-colors);
+$grid-breakpoints: map-merge($grid-breakpoints, $custom-breakpoints);
 
 // Theme variable overrides
 @if variable-exists(theme) {
@@ -40,13 +48,13 @@ $theme-colors: map-merge($theme-colors, $class-colors);
 }
 
 @if not variable-exists(theme) {
-  $primary: $brand-color;
+  $primary: $brand;
 }
 
 $success: #1eff00;
 
 $custom-colors: (
-  "brand": $brand-color,
+  "brand": $brand,
   "primary": $primary,
   "success": $success,
 );
