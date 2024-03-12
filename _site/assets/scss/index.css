@@ -1,8 +1,9 @@
 @use "sass:map";
-:root { --bs-blue: #0d6efd; --bs-indigo: #6610f2; --bs-purple: #6f42c1; --bs-pink: #d63384; --bs-red: #dc3545; --bs-orange: #fd7e14; --bs-yellow: #ffc107; --bs-green: #198754; --bs-teal: #20c997; --bs-cyan: #0dcaf0; --bs-black: #000; --bs-white: #fff; --bs-gray: #6c757d; --bs-gray-dark: #343a40; --bs-gray-100: #f8f9fa; --bs-gray-200: #e9ecef; --bs-gray-300: #dee2e6; --bs-gray-400: #ced4da; --bs-gray-500: #adb5bd; --bs-gray-600: #6c757d; --bs-gray-700: #495057; --bs-gray-800: #343a40; --bs-gray-900: #212529; --bs-primary: #e0a335; --bs-secondary: #6c757d; --bs-success: #1eff00; --bs-info: #0dcaf0; --bs-warning: #ffc107; --bs-danger: #dc3545; --bs-light: #f8f9fa; --bs-dark: #212529; --bs-death-knight: #c22e46; --bs-druid: #ff7d0a; --bs-hunter: #abd473; --bs-mage: #69ccf0; --bs-paladin: #f58cba; --bs-priest: white; --bs-raid: #e0a335; --bs-rogue: #fff569; --bs-shaman: #2459ff; --bs-warlock: #9482c9; --bs-warrior: #c79c6e; --bs-brand: #e0a335; --bs-primary-rgb: 224, 163, 53; --bs-secondary-rgb: 108, 117, 125; --bs-success-rgb: 30, 255, 0; --bs-info-rgb: 13, 202, 240; --bs-warning-rgb: 255, 193, 7; --bs-danger-rgb: 220, 53, 69; --bs-light-rgb: 248, 249, 250; --bs-dark-rgb: 33, 37, 41; --bs-death-knight-rgb: 194, 46, 70; --bs-druid-rgb: 255, 125, 10; --bs-hunter-rgb: 171, 212, 115; --bs-mage-rgb: 105, 204, 240; --bs-paladin-rgb: 245, 140, 186; --bs-priest-rgb: 255, 255, 255; --bs-raid-rgb: 224, 163, 53; --bs-rogue-rgb: 255, 245, 105; --bs-shaman-rgb: 36, 89, 255; --bs-warlock-rgb: 148, 130, 201; --bs-warrior-rgb: 199, 156, 110; --bs-brand-rgb: 224, 163, 53; --bs-white-rgb: 255, 255, 255; --bs-black-rgb: 0, 0, 0; --bs-body-color-rgb: 255, 255, 255; --bs-body-bg-rgb: 21, 23, 30; --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0)); --bs-body-font-family: var(--bs-font-sans-serif); --bs-body-font-size: 1rem; --bs-body-font-weight: 400; --bs-body-line-height: 1.5; --bs-body-color: white; --bs-body-bg: #15171e; --bs-border-width: 1px; --bs-border-style: solid; --bs-border-color: dimgrey; --bs-border-color-translucent: rgba(0, 0, 0, 0.175); --bs-border-radius: 0.375rem; --bs-border-radius-sm: 0.25rem; --bs-border-radius-lg: 0.5rem; --bs-border-radius-xl: 1rem; --bs-border-radius-2xl: 2rem; --bs-border-radius-pill: 50rem; --bs-link-color: #a5b1d6; --bs-link-hover-color: white; --bs-code-color: #d63384; --bs-highlight-bg: #fff3cd; }
+:root { --bs-blue: #0d6efd; --bs-indigo: #6610f2; --bs-purple: #6f42c1; --bs-pink: #d63384; --bs-red: #dc3545; --bs-orange: #fd7e14; --bs-yellow: #ffc107; --bs-green: #198754; --bs-teal: #20c997; --bs-cyan: #0dcaf0; --bs-black: #000; --bs-white: #fff; --bs-gray: #6c757d; --bs-gray-dark: #343a40; --bs-gray-100: #f8f9fa; --bs-gray-200: #e9ecef; --bs-gray-300: #dee2e6; --bs-gray-400: #ced4da; --bs-gray-500: #adb5bd; --bs-gray-600: #6c757d; --bs-gray-700: #495057; --bs-gray-800: #343a40; --bs-gray-900: #212529; --bs-primary: #e0a335; --bs-secondary: #6c757d; --bs-success: #1eff00; --bs-info: #0dcaf0; --bs-warning: #ffc107; --bs-danger: #dc3545; --bs-light: #f8f9fa; --bs-dark: #212529; --bs-death-knight: #c22e46; --bs-druid: #ff7d0a; --bs-hunter: #abd473; --bs-mage: #69ccf0; --bs-paladin: #f58cba; --bs-priest: white; --bs-raid: #e0a335; --bs-rogue: #fff569; --bs-shaman: #2459ff; --bs-warlock: #9482c9; --bs-warrior: #c79c6e; --bs-brand: #e0a335; --bs-primary-rgb: 224, 163, 53; --bs-secondary-rgb: 108, 117, 125; --bs-success-rgb: 30, 255, 0; --bs-info-rgb: 13, 202, 240; --bs-warning-rgb: 255, 193, 7; --bs-danger-rgb: 220, 53, 69; --bs-light-rgb: 248, 249, 250; --bs-dark-rgb: 33, 37, 41; --bs-death-knight-rgb: 194, 46, 70; --bs-druid-rgb: 255, 125, 10; --bs-hunter-rgb: 171, 212, 115; --bs-mage-rgb: 105, 204, 240; --bs-paladin-rgb: 245, 140, 186; --bs-priest-rgb: 255, 255, 255; --bs-raid-rgb: 224, 163, 53; --bs-rogue-rgb: 255, 245, 105; --bs-shaman-rgb: 36, 89, 255; --bs-warlock-rgb: 148, 130, 201; --bs-warrior-rgb: 199, 156, 110; --bs-brand-rgb: 224, 163, 53; --bs-white-rgb: 255, 255, 255; --bs-black-rgb: 0, 0, 0; --bs-body-color-rgb: 255, 255, 255; --bs-body-bg-rgb: 21, 23, 30; --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0)); --bs-root-font-size: 16px; --bs-body-font-family: var(--bs-font-sans-serif); --bs-body-font-size: 1rem; --bs-body-font-weight: 400; --bs-body-line-height: 1.5; --bs-body-color: white; --bs-body-bg: #15171e; --bs-border-width: 1px; --bs-border-style: solid; --bs-border-color: dimgrey; --bs-border-color-translucent: rgba(0, 0, 0, 0.175); --bs-border-radius: 0.375rem; --bs-border-radius-sm: 0.25rem; --bs-border-radius-lg: 0.5rem; --bs-border-radius-xl: 1rem; --bs-border-radius-2xl: 2rem; --bs-border-radius-pill: 50rem; --bs-link-color: #a5b1d6; --bs-link-hover-color: white; --bs-code-color: #d63384; --bs-highlight-bg: #fff3cd; }
 
 *, *::before, *::after { box-sizing: border-box; }
 
+:root { font-size: var(--bs-root-font-size); }
 @media (prefers-reduced-motion: no-preference) { :root { scroll-behavior: smooth; } }
 
 body { margin: 0; font-family: var(--bs-body-font-family); font-size: var(--bs-body-font-size); font-weight: var(--bs-body-font-weight); line-height: var(--bs-body-line-height); color: var(--bs-body-color); text-align: var(--bs-body-text-align); background-color: var(--bs-body-bg); -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
@@ -284,7 +285,7 @@ progress { vertical-align: baseline; }
 @media (min-width: 992px) { .container, .container-sm, .container-md, .container-lg { max-width: 960px; } }
 @media (min-width: 1200px) { .container, .container-sm, .container-md, .container-lg, .container-xl { max-width: 1140px; } }
 @media (min-width: 1400px) { .container, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl { max-width: 1320px; } }
-.row { --bs-gutter-x: 1.5rem; --bs-gutter-y: 0; display: flex; flex-wrap: wrap; margin-top: calc(-1 * var(--bs-gutter-y)); margin-right: calc(-.5 * var(--bs-gutter-x)); margin-left: calc(-.5 * var(--bs-gutter-x)); }
+.row { --bs-gutter-x: 0.75rem; --bs-gutter-y: 0; display: flex; flex-wrap: wrap; margin-top: calc(-1 * var(--bs-gutter-y)); margin-right: calc(-.5 * var(--bs-gutter-x)); margin-left: calc(-.5 * var(--bs-gutter-x)); }
 .row > * { flex-shrink: 0; width: 100%; max-width: 100%; padding-right: calc(var(--bs-gutter-x) * .5); padding-left: calc(var(--bs-gutter-x) * .5); margin-top: var(--bs-gutter-y); }
 
 .col { flex: 1 0 0%; }
@@ -3730,7 +3731,7 @@ progress { vertical-align: baseline; }
 
 .btn-tbc { background: #29391a; border: 1px solid #a3e268; }
 
-.btn-wotlk { background: #203336; border: 1px solid #7FCBD8; }
+.btn-wotlk { background: #203336; border: 1px solid #7fcbd8; }
 
 .container { height: 100%; display: flex; }
 
@@ -3831,9 +3832,9 @@ progress { vertical-align: baseline; }
 @media (min-width: 3800px) { :root { --bs-body-font-size: 32px; } }
 * { letter-spacing: 1px; }
 
-html { height: 100%; }
+html { height: 100%; color-scheme: dark; font-size: var(--bs-body-font-size); }
 
-body { height: 100%; padding-right: 0 !important; margin-right: calc(-1 * (100vw - 100%)); overflow-x: hidden; opacity: 0; transition: opacity .15s linear; }
+body { height: 100%; padding-right: 0 !important; margin-right: calc(-1 * (100vw - 100%)); overflow-x: hidden; opacity: 0; transition: opacity 0.15s linear; }
 body.ready { opacity: 1; }
 
 main { z-index: 1; pointer-events: none; }
@@ -3845,29 +3846,33 @@ main { z-index: 1; pointer-events: none; }
 .expansion-panels .expansion-panel:hover .expansion-panel-link { box-shadow: inset 0 0 4rem var(--expansion-color); }
 .expansion-panels .expansion-panel.expansion-panel-sod { --expansion-color: #e0a335; }
 .expansion-panels .expansion-panel.expansion-panel-sod:hover .expansion-panel-img { filter: brightness(35%); }
-.expansion-panels .expansion-panel.expansion-panel-sod .homepage-panel-block { text-shadow: 0 0 1rem #7FCBD8; }
+.expansion-panels .expansion-panel.expansion-panel-sod .homepage-panel-block { text-shadow: 0 0 1rem #7fcbd8; }
 .expansion-panels .expansion-panel.expansion-panel-sod .expansion-panel-img { filter: brightness(20%); }
-.expansion-panels .expansion-panel.expansion-panel-sod .expansion-panel-block { background: #161005; }
+.expansion-panels .expansion-panel.expansion-panel-sod .expansion-panel-block { background-color: rgba(22, 16, 5, 0.75); }
 .expansion-panels .expansion-panel.expansion-panel-tbc { --expansion-color: #a3e268; }
 .expansion-panels .expansion-panel.expansion-panel-tbc:hover .expansion-panel-img { filter: brightness(35%); }
 .expansion-panels .expansion-panel.expansion-panel-tbc .expansion-panel-img { filter: brightness(20%); }
-.expansion-panels .expansion-panel.expansion-panel-tbc .expansion-panel-block { background: #10170a; }
-.expansion-panels .expansion-panel.expansion-panel-wotlk { --expansion-color: #7FCBD8; }
+.expansion-panels .expansion-panel.expansion-panel-tbc .expansion-panel-block { background-color: rgba(16, 23, 10, 0.75); }
+.expansion-panels .expansion-panel.expansion-panel-wotlk { --expansion-color: #7fcbd8; }
 .expansion-panels .expansion-panel.expansion-panel-wotlk:hover .expansion-panel-img { filter: brightness(150%); }
-.expansion-panels .expansion-panel.expansion-panel-wotlk .expansion-panel-block { background: #0d1416; }
-.expansion-panels .expansion-panel .expansion-panel-img { height: 80%; width: 100%; object-fit: cover; transition: filter .15s ease-in-out; }
+.expansion-panels .expansion-panel.expansion-panel-wotlk .expansion-panel-block { background-color: rgba(13, 20, 22, 0.75); }
+.expansion-panels .expansion-panel.expansion-panel-cata { --expansion-color: #f94119; }
+.expansion-panels .expansion-panel.expansion-panel-cata:hover .expansion-panel-img { filter: brightness(60%); }
+.expansion-panels .expansion-panel.expansion-panel-cata .expansion-panel-img { filter: brightness(30%); }
+.expansion-panels .expansion-panel.expansion-panel-cata .expansion-panel-block { background-color: rgba(39, 10, 4, 0.75); }
+.expansion-panels .expansion-panel .expansion-panel-img { position: absolute; height: 100%; width: 100%; object-fit: cover; transition: filter 0.15s ease-in-out; }
 .expansion-panels .expansion-panel .expansion-panel-img.homepage-image-tbc { filter: brightness(20%); }
-.expansion-panels .expansion-panel .expansion-panel-block { width: 100%; height: 20%; border-top: 1px solid dimgrey; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-.expansion-panels .expansion-panel .expansion-panel-link { position: absolute; inset: 0; display: block; transition: box-shadow .15s ease-in-out; }
+.expansion-panels .expansion-panel .expansion-panel-block { position: absolute; bottom: 0; width: 100%; height: 20%; border-top: 1px solid dimgrey; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.expansion-panels .expansion-panel .expansion-panel-link { position: absolute; inset: 0; display: block; transition: box-shadow 0.15s ease-in-out; }
 
 #homepage { height: 100%; display: flex; flex-direction: column; }
 #homepage .homepage-header-container { padding-top: calc(var(--container-padding) / 2); }
 #homepage .homepage-content-container { padding-top: var(--container-padding); padding-bottom: var(--container-padding); }
 #homepage .homepage-header .homepage-header-container { display: flex; }
-#homepage .homepage-header .homepage-header-container .navbar-brand-container { display: flex; }
+#homepage .homepage-header .homepage-header-container .navbar-brand-container { display: flex; margin-right: auto; }
 #homepage .homepage-header .homepage-header-container .navbar-brand-container .wowsims-logo { width: 6rem; margin-right: 1rem; }
 #homepage .homepage-header .homepage-header-container .navbar-brand-container .wowsims-title { color: #e0a335; margin: 0; line-height: 1; }
-#homepage .homepage-header .homepage-header-container .homepage-header-collapse { padding-top: 1rem; padding-bottom: 1rem; align-items: flex-end; justify-content: flex-end; }
+#homepage .homepage-header .homepage-header-container .navbar-nav { padding-top: 1rem; padding-bottom: 1rem; align-items: flex-end; justify-content: flex-end; }
 #homepage .homepage-header .expansion-title { color: #e0a335; margin: 0; }
 #homepage .homepage-content-container { flex-direction: column; }
 #homepage .homepage-content-container .info-container { padding-top: 20vh; display: flex; justify-content: center; }
@@ -3887,11 +3892,11 @@ main { z-index: 1; pointer-events: none; }
   #homepage .homepage-content-container .sim-links-container .sim-links .sim-link-dropdown .dropdown-menu { position: relative !important; inset: 0 !important; transform: none !important; } }
 @media (max-width: 767.98px) { .expansion-panels { height: unset; flex-direction: column; }
   .expansion-panels .expansion-panel { border: none; }
-  .expansion-panels .expansion-panel .expansion-panel-img { height: 80vh; }
+  .expansion-panels .expansion-panel .expansion-panel-img { position: initial !important; height: 100vh; }
   .expansion-panels .expansion-panel .expansion-panel-block { height: 20vh; border-top: 0.5px solid dimgrey; border-bottom: 0.5px solid dimgrey; }
   #homepage .homepage-header-container, #homepage .homepage-content-container, #homepage .homepage-footer-container { padding-top: 1rem; padding-bottom: 1rem; }
   #homepage .homepage-header .homepage-header-container { display: flex; }
   #homepage .homepage-header .homepage-header-container .navbar-brand-container { width: 100%; justify-content: space-between; align-items: flex-end; }
   #homepage .homepage-header .homepage-header-container .navbar-brand-container .wowsims-logo { width: 48px; }
-  #homepage .homepage-content-container .info-container { margin-bottom: 1rem; }
+  #homepage .homepage-content-container .info-container { padding-top: 0; }
   #homepage .homepage-content-container .sim-links-container .sim-links .sim-link, #homepage .homepage-content-container .sim-links-container .sim-links .sim-link-dropdown { flex: 1 100% !important; } }

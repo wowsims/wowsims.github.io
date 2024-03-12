@@ -16,7 +16,7 @@
     color: var(--expansion-color);
 
     &:not(:last-child) {
-      border-right: .5px solid $border-color;
+      border-right: 0.5px solid $border-color;
     }
 
     &:hover {
@@ -33,7 +33,7 @@
           filter: brightness(35%);
         }
       }
-      
+
       .homepage-panel-block {
         text-shadow: 0 0 1rem $wrath-blue;
       }
@@ -43,13 +43,13 @@
       }
 
       .expansion-panel-block {
-        background: mix(black, $brand, 90%);
+        background-color: rgba(mix(black, $brand, 90%), 0.75);
       }
     }
-  
+
     &.expansion-panel-tbc {
       --expansion-color: #{$tbc-green};
-  
+
       &:hover {
         .expansion-panel-img {
           filter: brightness(35%);
@@ -61,13 +61,13 @@
       }
 
       .expansion-panel-block {
-        background: mix(black, $tbc-green, 90%);
+        background-color: rgba(mix(black, $tbc-green, 90%), 0.75);
       }
     }
-  
+
     &.expansion-panel-wotlk {
       --expansion-color: #{$wrath-blue};
-  
+
       &:hover {
         .expansion-panel-img {
           filter: brightness(150%);
@@ -75,22 +75,46 @@
       }
 
       .expansion-panel-block {
-        background: mix(black, $wrath-blue, 90%);
+        background-color: rgba(mix(black, $wrath-blue, 90%), 0.75);
       }
     }
-  
+
+    &.expansion-panel-cata {
+      --expansion-color: #{$cata-orange};
+
+      &:hover {
+        .expansion-panel-img {
+          filter: brightness(60%);
+        }
+      }
+
+      .expansion-panel-img {
+        filter: brightness(30%);
+      }
+
+      .expansion-panel-block {
+        background-color: rgba(
+          mix(rgba(0, 0, 0, 0.75), $cata-orange, 90%),
+          0.75
+        );
+      }
+    }
+
     .expansion-panel-img {
-      height: 80%;
+      position: absolute;
+      height: 100%;
       width: 100%;
       object-fit: cover;
-      transition: filter .15s ease-in-out;
-  
+      transition: filter 0.15s ease-in-out;
+
       &.homepage-image-tbc {
         filter: brightness(20%);
       }
     }
-  
+
     .expansion-panel-block {
+      position: absolute;
+      bottom: 0;
       width: 100%;
       height: 20%;
       border-top: 1px solid $border-color;
@@ -105,7 +129,7 @@
       position: absolute;
       inset: 0;
       display: block;
-      transition: box-shadow .15s ease-in-out;
+      transition: box-shadow 0.15s ease-in-out;
     }
   }
 }
@@ -130,12 +154,13 @@
 
       .navbar-brand-container {
         display: flex;
+        margin-right: auto;
 
         .wowsims-logo {
           width: 6rem;
           margin-right: map-get($spacers, 3);
         }
-  
+
         .wowsims-title {
           @extend .display-1;
           @extend .fw-bold;
@@ -145,7 +170,7 @@
         }
       }
 
-      .homepage-header-collapse {
+      .navbar-nav {
         padding-top: map-get($spacers, 3);
         padding-bottom: map-get($spacers, 3);
         align-items: flex-end;
@@ -186,7 +211,8 @@
           margin-bottom: map-get($spacers, 5);
         }
 
-        &> .sim-link, &> .sim-link-dropdown {
+        & > .sim-link,
+        & > .sim-link-dropdown {
           flex: 1 25%;
           margin-right: 25%;
         }
@@ -227,7 +253,8 @@
         .sim-links {
           margin-bottom: 0 !important;
 
-          .sim-link, .sim-link-dropdown {
+          .sim-link,
+          .sim-link-dropdown {
             flex: 1 50%;
             margin-right: 0 !important;
           }
@@ -254,13 +281,14 @@
       border: none;
 
       .expansion-panel-img {
-        height: 80vh;
+        position: initial !important;
+        height: 100vh;
       }
 
       .expansion-panel-block {
         height: 20vh;
-        border-top: .5px solid $border-color;
-        border-bottom: .5px solid $border-color;
+        border-top: 0.5px solid $border-color;
+        border-bottom: 0.5px solid $border-color;
       }
     }
   }
@@ -276,7 +304,7 @@
     .homepage-header {
       .homepage-header-container {
         display: flex;
-  
+
         .navbar-brand-container {
           width: 100%;
           justify-content: space-between;
@@ -291,12 +319,13 @@
 
     .homepage-content-container {
       .info-container {
-        margin-bottom: map-get($spacers, 3);
+        padding-top: 0;
       }
 
       .sim-links-container {
         .sim-links {
-          .sim-link, .sim-link-dropdown {
+          .sim-link,
+          .sim-link-dropdown {
             flex: 1 100% !important;
           }
         }
