@@ -5,9 +5,7 @@
     display: grid;
     gap: var(--spacer-3);
     padding-top: var(--spacer-3);
-    padding-bottom: var(--spacer-3);
     border-top: var(--border-default);
-    border-bottom: var(--border-default);
 
     &> * {
         border-top: var(--border-default);

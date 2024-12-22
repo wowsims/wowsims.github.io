@@ -10,7 +10,7 @@ function Welcome() {
                 <strong className="text-brand">World of Warcraft® Classic</strong>.
                 It's thanks to dozens of developers, hundreds of players, and thousands of hours of time that we've been able to keep the project going so that our users can continue to make the most out of their gameplay.
             </p>
-            <p>
+            <p className="mb-0">
                 Want to contribute? Find us on&nbsp;
                 <a href="https://github.com/wowsims/" target="_blank" className="d-inline" title="Contribute on GitHub">
                     <FontAwesomeIcon icon={faGithub} /> GitHub

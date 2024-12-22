@@ -1,6 +1,6 @@
 #welcomeContainer {
     display: flex;
-    gap: var(--spacer-3);
+    gap: var(--container-padding);
     background: rgb(from var(--bs-body-bg) R G B / 0.50);
 
     @include media-breakpoint-down(md) {

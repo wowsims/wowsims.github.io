@@ -6,12 +6,9 @@
     z-index: 100;
 
     .homepage-header-container {
-        padding-top: calc(var(--container-padding) / 8);
-        padding-bottom: calc(var(--container-padding) / 8);
-
-        @include media-breakpoint-down(lg) {
-            padding-top: calc(var(--container-padding) / 4);
-            padding-bottom: calc(var(--container-padding) / 4);
+        @include media-breakpoint-up(lg) {
+            padding-top: calc(var(--container-padding) / 16);
+            padding-bottom: calc(var(--container-padding) / 16);
         }
 
         @include media-breakpoint-down(md) {
@@ -37,7 +34,7 @@
         display: flex;
         flex-direction: column;
         font-size: 5rem;
-        line-height: 1;
+        line-height: 0.8;
         color: var(--bs-brand);
 
         @include media-breakpoint-down(xxl) {
@@ -51,5 +48,12 @@
     
     .expansion-title {
         font-size: 35%;
+        margin-left: var(--spacer-2);
+        margin-top: var(--spacer-2);
+        margin-bottom: var(--spacer-2);
+
+        @include media-breakpoint-up(xxl) {
+            margin-left: var(--spacer-3);
+        }
     }
 }

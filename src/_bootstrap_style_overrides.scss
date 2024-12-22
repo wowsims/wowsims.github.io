@@ -19,7 +19,7 @@
 	padding: calc(var(--container-padding) / 2) var(--container-padding);
   display: flex;
 
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(md) {
     padding-top: calc(var(--container-padding) * 2);
     padding-bottom: calc(var(--container-padding) * 2);
   }
