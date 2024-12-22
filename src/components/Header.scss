@@ -1,0 +1,55 @@
+.homepage-header {
+    position: sticky;
+    top: 0;
+    border-bottom: var(--border-default);
+    background: var(--bs-body-bg);
+    z-index: 100;
+
+    .homepage-header-container {
+        padding-top: calc(var(--container-padding) / 8);
+        padding-bottom: calc(var(--container-padding) / 8);
+
+        @include media-breakpoint-down(lg) {
+            padding-top: calc(var(--container-padding) / 4);
+            padding-bottom: calc(var(--container-padding) / 4);
+        }
+
+        @include media-breakpoint-down(md) {
+            padding-top: var(--container-padding);
+            padding-bottom: var(--container-padding);
+        }
+    }
+
+    .wowsims-logo {
+        width: 6rem;
+
+        @include media-breakpoint-down(xxl) {
+            width: 4rem;
+        }
+
+        @include media-breakpoint-down(lg) {
+            width: 3rem;
+        }
+    }
+    
+    .wowsims-title {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        font-size: 5rem;
+        line-height: 1;
+        color: var(--bs-brand);
+
+        @include media-breakpoint-down(xxl) {
+            font-size: 4rem;
+        }
+
+        @include media-breakpoint-down(lg) {
+            font-size: 3rem;
+        }
+    }
+    
+    .expansion-title {
+        font-size: 35%;
+    }
+}

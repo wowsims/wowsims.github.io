@@ -1,0 +1,22 @@
+#welcomeContainer {
+    display: flex;
+    gap: var(--spacer-3);
+    background: rgb(from var(--bs-body-bg) R G B / 0.50);
+
+    @include media-breakpoint-down(md) {
+        flex-direction: column;
+    }
+
+    &> * {
+        flex: 1;
+        display: flex;
+    }
+
+    .discord-iframe {
+        margin-left: auto;
+
+        @include media-breakpoint-down(md) {
+            width: 100%;
+        }
+    }
+}

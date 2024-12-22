@@ -1,93 +1,32 @@
----
----
-
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="src/assets/img/favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <title>WoWSims - WoW Classic Simulators</title>
-    <meta charset="utf-8" />
-
-    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
-
     <meta
       name="description"
-      content="Simulations for World of Warcraft® Classic."
+      content="Open-source simulations for World of Warcraft® Classic."
     />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    {% seo %}
-
-    <link rel="stylesheet" href="/assets/scss/index.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <!-- SEO tags -->
+    <meta property="og:title" content="WoWSims - WoW Classic Simulators" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="description" content="Open-source simulations for World of Warcraft® Classic." />
+    <meta property="og:description" content="Open-source simulations for World of Warcraft® Classic." />
+    <link rel="canonical" href="https://wowsims.github.io" />
+    <meta property="og:url" content="https://wowsims.github.io" />
+    <meta property="og:site_name" content="WoWSims - WoW Classic Simulators" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="WoWSims - WoW Classic Simulators" />
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebSite","description":"Welcome to WoWSims! This is a community-driven project to provide simulations for World of Warcraft® Classic™ Classes &amp; Raids together with the leading theorycrafters and class representatives.","headline":"WoWSims - WoW Classic Simulators","name":"WoWSims - WoW Classic Simulators","url":"http://localhost:4000/"}</script>
   </head>
   <body>
-    <div class="expansion-panels">
-      <div class="expansion-panel expansion-panel-sod">
-        <img src="/sod/assets/img/sod.png" class="expansion-panel-img" />
-        <div class="expansion-panel-block">
-          <h3 class="text-primary">WoWSims</h3>
-          <h2>Season of Discovery</h2>
-        </div>
-        <a href="/sod" class="expansion-panel-link"></a>
-      </div>
-      <div class="expansion-panel expansion-panel-tbc">
-        <img src="/tbc/assets/tbc.jpg" class="expansion-panel-img" />
-        <div class="expansion-panel-block">
-          <h3 class="text-primary">WoWSims</h3>
-          <h2>The Burning Crusade</h2>
-        </div>
-        <a href="/tbc" class="expansion-panel-link"></a>
-      </div>
-      <div class="expansion-panel expansion-panel-wotlk">
-        <img src="/wotlk/assets/img/wotlk.jpg" class="expansion-panel-img" />
-        <div class="expansion-panel-block">
-          <h3 class="text-primary">WoWSims</h3>
-          <h2>Wrath of the Lich King</h2>
-        </div>
-        <a href="/wotlk" class="expansion-panel-link"></a>
-      </div>
-      <div class="expansion-panel expansion-panel-cata">
-        <img src="/cata/assets/img/cata.jpg" class="expansion-panel-img" />
-        <div class="expansion-panel-block">
-          <h3 class="text-primary">WoWSims</h3>
-          <h2>Cataclysm</h2>
-        </div>
-        <a href="/cata" class="expansion-panel-link"></a>
-      </div>
-    </div>
-    <div id="homepage">
-      {% include header.html %}
-      <main>
-        <div class="container homepage-content-container">
-          <div class="info-container">
-            <p class="wowsims-info">
-              Welcome to WoWSims! This is a community-driven project to provide
-              class and raid simulations for World of Warcraft&reg;
-              Classic&trade; together with leading theorycrafters and class
-              representatives.
-            </p>
-          </div>
-        </div>
-      </main>
-    </div>
-    <script src="/assets/javascript/index.js"></script>
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-T3HBB0LXNX"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-YEJ8MEHGV2");
-    </script>
+    <div id="homepage"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

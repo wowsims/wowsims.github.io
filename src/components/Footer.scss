@@ -1,0 +1,36 @@
+#footerContainer {
+    background: var(--bs-body-bg);
+
+    @include media-breakpoint-up(md) {
+        padding-top: calc(var(--container-padding) / 4);
+        padding-bottom: calc(var(--container-padding) / 4);
+    }
+
+    &> * {
+        width: 33.33%;
+    }
+
+    .copyright {
+        @include media-breakpoint-up(sm) {
+            width: 50%;
+        }
+    }
+
+    .connect {
+        svg {
+            width: 1.5rem;
+        }
+    }
+
+    .versions,
+    .connect {
+        gap: var(--spacer-3);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-title {
+        margin-bottom: var(--spacer-4);
+    }
+}
