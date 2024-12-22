@@ -7,7 +7,7 @@ interface Props {
 function ExpansionPanel({version}: Props) {
   return (
     <div className={`expansion-panel expansion-panel-${version.slug}`} style={{'--expansion-color': version.themeColorHex} as React.CSSProperties}>
-        <div className="expansion-cover" style={{'--expansion-bg': `url(https://wowsims.github.io${version.coverSrc})`} as React.CSSProperties} />
+        <div className="expansion-cover" style={{'--expansion-bg': `url(${version.coverSrc})`} as React.CSSProperties} />
         <div className="expansion-panel-body container">
             <div className="expansion-block">
                 <h1 className="text-brand h2 mb-0">WoWSims</h1>

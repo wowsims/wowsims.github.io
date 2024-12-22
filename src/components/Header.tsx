@@ -2,6 +2,8 @@ import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import PatreonButton from './PatreonButton'
 
+import WoWSimsLogo from '../assets/img/WoW-Simulator-Icon.png';
+
 function Header() {
   return (
     <header className="homepage-header">
@@ -9,7 +11,7 @@ function Header() {
         <nav className="navbar navbar-dark flex-wrap align-items-center align-items-md-end w-100">
           <div className="navbar-brand-container order-0">
             <a href="#" className="navbar-brand d-flex align-items-center p-0 m-0 gap-3">
-              <img className="wowsims-logo" src="src/assets/img/WoW-Simulator-Icon.png" />
+              <img className="wowsims-logo" src={WoWSimsLogo} />
               <h1 className="wowsims-title">
                 WoWSims
                 <small className="expansion-title">Classic WoW Simulations</small>
@@ -33,7 +35,7 @@ function Header() {
           <div className="offcanvas offcanvas-end" tabIndex={-1} id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div className="offcanvas-header border-bottom">
               <a href="#" className="navbar-brand d-flex align-items-center p-0 m-0 gap-3">
-                <img className="wowsims-logo" src="assets/img/WoW-Simulator-Icon.png" />
+                <img className="wowsims-logo" src={WoWSimsLogo} />
                 <h1 className="wowsims-title">
                   WoWSims
                   <small className="expansion-title">Classic WoW Simulations</small>
