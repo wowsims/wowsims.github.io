@@ -8,7 +8,7 @@ const versions: Version[] = [
         coverSrc: '/classic/assets/img/classic.jpg',
         logoSrc: 'https://warcraft.wiki.gg/images/thumb/a/af/WoW_Classic_logo.png/2560px-WoW_Classic_logo.png',
         themeColorHex: '#f8b700',
-        available: false,
+        available: true,
     },
     {
         slug: 'tbc',
