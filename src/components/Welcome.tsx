@@ -23,7 +23,7 @@ function Welcome() {
             </p>
             </div>
             <div>
-                <iframe className="discord-iframe" src="https://discord.com/widget?id=891730968493305867&theme=dark" width="350" height="400" allowTransparency={true} sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" />
+                <iframe className="discord-iframe" src="https://discord.com/widget?id=891730968493305867&theme=dark" width="350" height="400" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" />
             </div>
         </div>
     )

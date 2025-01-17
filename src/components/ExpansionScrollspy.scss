@@ -1,0 +1,57 @@
+.expansion-scrollspy-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: calc(var(--container-padding) / 16);
+    padding: calc(var(--container-padding) / 4);
+
+    @include media-breakpoint-only(1080p) {
+        padding: calc(var(--container-padding) / 6);
+    }
+
+    @include media-breakpoint-down(xxl) {
+        align-items: center;
+        padding: calc(var(--container-padding) / 3);
+    }
+
+    @include media-breakpoint-down(lg) {
+        display: none;
+    }
+}
+
+.expansion-scrollspy-link {
+    display: flex;
+    align-items: center;
+    color: var(--expansion-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: font-size 0.15s ease-in-out;
+
+    &.active {
+        font-size: 2rem;
+
+        .expansion-scrollspy-link-icon {
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    @include media-breakpoint-down(xxl) {
+        span {
+            display: none;
+        }
+    }
+}
+
+.expansion-scrollspy-link-icon {
+    margin-right: var(--spacer-2);
+    transition: width 0.15s ease-in-out, height 0.15s ease-in-out;
+
+    @include media-breakpoint-down(xxl) {
+        margin-right: 0;
+    }
+}

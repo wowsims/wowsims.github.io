@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import versions from "../data/versions"
+import { getVersions } from "../data/versions"
 import { faDiscord, faGithub } from "@fortawesome/free-brands-svg-icons"
 import PatreonButton from "./PatreonButton"
+import { WoWIcon } from "./WoWIcon"
 
 function Footer() {
     return (
@@ -11,9 +12,15 @@ function Footer() {
             </div>
             <div className="versions">
                 <span className="footer-title">Versions</span>
-                {versions.filter(version => version.available).map(version => (
-                    <a className="" href={`/${version.slug}`}>{version.title}</a>
-                ))}
+                {getVersions().filter(version => version.available).map(version => {
+                    const slug = version.acronym.toLowerCase();
+                    return (
+                        <a className="d-flex align-items-center" href={`/${slug}`} style={{'color': version.themeColorHex} as React.CSSProperties} key={slug}>
+                            <WoWIcon className="me-2" />
+                            {version.title}
+                        </a>
+                    )
+                })}
             </div>
             <div className="connect">
                 <span className="footer-title">Connect</span>
