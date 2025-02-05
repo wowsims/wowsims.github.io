@@ -3,8 +3,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import PatreonButton from './PatreonButton'
 
 import WoWSimsLogo from '../assets/img/WoW-Simulator-Icon.png';
+import CurseforgeButton from './CurseforgeButton';
 
 function Header() {
+  const navLinks = (
+    <>
+      <a href="https://discord.gg/p3DgvmnDCS" target="_blank" rel="noopener noreferrer" className="nav-link flex-1" title="Join our Discord">
+        <FontAwesomeIcon icon={faDiscord} size="2x" className="me-1" /><strong>Discord</strong>
+      </a>
+      <a href="https://github.com/wowsims/" target="_blank" rel="noopener noreferrer" className="nav-link flex-1" title="Contribute on GitHub">
+        <FontAwesomeIcon icon={faGithub} size="2x" className="me-1" /><strong>GitHub</strong>
+      </a>
+      <CurseforgeButton className="flex-1" />
+      <PatreonButton className="flex-1" />
+    </>
+  )
   return (
     <header className="homepage-header">
       <div className="container homepage-header-container">
@@ -18,14 +31,8 @@ function Header() {
               </h1>
             </a>
           </div>
-          <div className="navbar-nav d-none d-md-flex flex-row ms-auto">
-            <a href="https://discord.gg/p3DgvmnDCS" target="_blank" rel="noopener noreferrer" className="nav-link" title="Join our Discord">
-              <FontAwesomeIcon icon={faDiscord}  size="2x" />
-            </a>
-            <a href="https://github.com/wowsims/" target="_blank" rel="noopener noreferrer" className="nav-link" title="Contribute on GitHub">
-              <FontAwesomeIcon icon={faGithub}  size="2x" />
-            </a>
-            <PatreonButton />
+          <div className="navbar-nav d-none d-md-flex flex-row align-items-center ms-auto">
+            {navLinks}
           </div>
 
           <button className="navbar-toggler d-block d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -45,13 +52,7 @@ function Header() {
             </div>
             <div className="offcanvas-body">
               <div className="navbar-nav d-flex flex-row ms-auto">
-                <a href="https://discord.gg/p3DgvmnDCS" target="_blank" rel="noopener noreferrer" className="nav-link flex-1" title="Join our Discord">
-                  <FontAwesomeIcon icon={faDiscord} size="2x" />&nbsp;Discord
-                </a>
-                <a href="https://github.com/wowsims/" target="_blank" rel="noopener noreferrer" className="nav-link flex-1" title="Contribute on GitHub">
-                  <FontAwesomeIcon icon={faGithub} size="2x" />&nbsp;GitHub
-                </a>
-                <PatreonButton className="flex-1" />
+                {navLinks}
               </div>
             </div>
           </div>

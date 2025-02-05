@@ -1,25 +1,36 @@
-.expansion-scrollspy-container {
+#expansion-scrollspy {
     position: fixed;
     top: 0;
     bottom: 0;
     z-index: 10;
+    width: var(--container-padding-x);
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: calc(var(--container-padding) / 16);
-    padding: calc(var(--container-padding) / 4);
+    padding-top: calc(var(--container-padding-y) * 2);
+    padding-left: calc(var(--container-padding-x) / 5);
 
-    @include media-breakpoint-only(1080p) {
-        padding: calc(var(--container-padding) / 6);
-    }
-
-    @include media-breakpoint-down(xxl) {
-        align-items: center;
-        padding: calc(var(--container-padding) / 3);
+    @include media-breakpoint-down(1080p) {
+        padding-left: calc(var(--container-padding-x) / 8);
     }
 
     @include media-breakpoint-down(lg) {
         display: none;
+    }
+
+    @include media-breakpoint-down(xxl) {
+        padding-top: calc(var(--container-padding-y) * 3);
+        padding-left: 0;
+        justify-content: center;
+    }
+}
+
+.expansion-scrollspy-container {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--container-padding) / 16);
+
+    @include media-breakpoint-down(xxl) {
+        align-items: center;
+        gap: calc(var(--container-padding) / 6);
     }
 }
 
@@ -35,8 +46,13 @@
         font-size: 2rem;
 
         .expansion-scrollspy-link-icon {
-            width: 32px;
-            height: 32px;
+            width: 2rem;
+            height: 2rem;
+
+            @include media-breakpoint-down(xxl) {
+                width: 3rem;
+                height: 3rem;
+            }
         }
     }
 
@@ -53,5 +69,7 @@
 
     @include media-breakpoint-down(xxl) {
         margin-right: 0;
+        width: 2.5rem;
+        height: 2.5rem;
     }
 }

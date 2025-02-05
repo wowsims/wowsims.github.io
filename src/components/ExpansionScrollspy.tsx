@@ -11,16 +11,18 @@ export function ExpansionScrollspy() {
     }
 
     return (
-        <nav id="expansion-scrollspy" className="expansion-scrollspy-container">
-            {getVersions().map(version => {
-                const slug = version.acronym.toLowerCase();
-                return (
-                    <a href={`#${slug}`} className="expansion-scrollspy-link" style={{color: version.themeColorHex} as React.CSSProperties} key={slug} onClick={(e) => fixedScroll(e)}>
-                        <WoWIcon className="expansion-scrollspy-link-icon" />
-                        <span>{version.acronym}</span>
-                    </a>
-                )
-            })}
+        <nav id="expansion-scrollspy">
+            <div className="expansion-scrollspy-container">
+                {getVersions().map(version => {
+                    const slug = version.acronym.toLowerCase();
+                    return (
+                        <a href={`#${slug}`} className="expansion-scrollspy-link" style={{color: version.themeColorHex} as React.CSSProperties} key={slug} onClick={(e) => fixedScroll(e)}>
+                            <WoWIcon className="expansion-scrollspy-link-icon" />
+                            <span>{version.acronym}</span>
+                        </a>
+                    )
+                })}
+            </div>
         </nav>
     )
 }

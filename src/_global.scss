@@ -112,8 +112,20 @@ h6 {
 	font-weight: bold;
 }
 
+:root {
+	--p-mb: calc(var(--container-padding-y) / 4);
+
+	@include media-breakpoint-down(xl) {
+		--p-mb: var(--container-padding-y);
+	}
+
+	@include media-breakpoint-down(md) {
+		--p-mb: var(--container-padding-y);
+	}
+}
+
 p {
-	margin-bottom: var(--spacer-5);
+	margin-bottom: var(--p-mb);
   	font-size: calc(var(--bs-root-font-size) * 1.25);
 }
 
