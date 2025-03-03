@@ -16,7 +16,7 @@ function ExpansionPanel({version}: Props) {
                 <h1 className="text-brand h2 mb-0">WoWSims</h1>
                 <h2 className="expansion-title">{version.title}</h2>
                 <p className="expansion-description">{version.description}</p>
-                <a className="expansion-btn btn btn-lg" href={`/${slug}`}>Learn More</a>
+                <a className="expansion-btn btn btn-lg" href={`/${slug}/`}>Learn More</a>
             </div>
             <div className="expansion-logo-container">
               <img className="expansion-logo" src={version.logoSrc} alt={`${version.title} Logo`} />
