@@ -9,7 +9,7 @@ function Welcome() {
         <div id="welcomeContainer" className="container">
             <div className="flex-column justify-content-center">
                 <p>
-                    <strong className="text-brand">WoWSims</strong> is a fan-created open-source project started in 2021 with the goal of providing user-friendly tools that allow players to simulate their gameplay across the many versions of&nbsp;
+                    <strong className="text-brand">WoWSims</strong> is a fan-made open-source project started in 2021 with the goal of providing user-friendly tools that allow players to simulate their gameplay across the many versions of&nbsp;
                     <strong className="text-brand">World of Warcraft® Classic</strong>.
                     It's thanks to dozens of developers, hundreds of players, and thousands of hours of time that we've been able to keep the project going so that our users can continue to make the most out of their gameplay.
                 </p>

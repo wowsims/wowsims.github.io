@@ -1,4 +1,4 @@
-export const DOMAIN = 'https://wowsims.github.io';
+export const DOMAIN = 'https://www.wowsims.com';
 export const GITHUB_LINK = 'https://github.com/wowsims/';
 export const DISCORD_LINK = 'https://discord.gg/p3DgvmnDCS';
 export const ADDON_LINK = 'https://www.curseforge.com/wow/addons/wowsimsexporter';
