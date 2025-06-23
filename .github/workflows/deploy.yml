@@ -12,6 +12,12 @@ jobs:
               with:
                   persist-credentials: false
 
+            - name: Setup Node
+              uses: actions/setup-node@v4
+    
+            - name: Install dependencies
+              uses: bahmutov/npm-install@v1
+        
             - name: Build 🔧
               run: |
                   npm run build
