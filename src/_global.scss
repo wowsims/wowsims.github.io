@@ -65,6 +65,12 @@ body {
 	&::before {
 		inset: 0;
 		background: url(./assets/img/wowsims_ui_blurred.webp) center / cover no-repeat;
+
+		// On portrait screens `cover` only shows a narrow slice of this wide image, and the
+		// center of it is a mostly-empty text column. Shift over to the item icons and gear panel.
+		@media (orientation: portrait) {
+			background-position: 80% center;
+		}
 	}
 
 	// Darken and vignette the background so foreground content stays readable
