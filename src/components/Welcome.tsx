@@ -11,11 +11,15 @@ function Welcome() {
     return (
         <section className="hero">
             <h1 className="hero-title">
-                Simulate every era of <span className="text-brand">World of Warcraft</span>
+                {/* Each word rises in on its own for a staggered entrance */}
+                <span className="hero-title-word">From</span>{' '}
+                <span className="hero-title-word text-brand">Classic</span>{' '}
+                <span className="hero-title-word">to</span>{' '}
+                <span className="hero-title-word" style={{color: foreverColor}}>Forever.</span>
             </h1>
             <p className="hero-blurb">
-                <strong className="text-brand">WoWSims</strong> is a fan-made open-source project started in 2021 with the goal of providing user-friendly tools that allow players to simulate their gameplay in <strong>World of Warcraft® Classic</strong>.
-                Since then we've grown to support every Classic release, and now we're carrying that support forward into <strong style={{color: foreverColor}}>World of Warcraft®: Forever</strong>.
+                <strong className="text-brand">WoWSims</strong> is a fan-made open-source project started in 2021 with the goal of providing user-friendly tools for players to simulate their gameplay in <strong>World of Warcraft® Classic</strong>.
+                Since then we've supported every Classic release, and now we're carrying that forward into <strong style={{color: foreverColor}}>World of Warcraft®: Forever</strong>.
                 It's thanks to dozens of developers, hundreds of players, and thousands of hours of time that we've been able to keep the project going so that our users can continue to make the most out of their gameplay.
             </p>
             <div className="hero-actions">

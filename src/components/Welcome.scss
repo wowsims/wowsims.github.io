@@ -10,20 +10,44 @@
         margin-bottom: var(--spacer-3);
     }
 
+    .hero-title-word {
+        display: inline-block;
+        animation: rise-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+
+        @for $i from 1 through 4 {
+            &:nth-child(#{$i}) {
+                animation-delay: #{($i - 1) * 90}ms;
+            }
+        }
+    }
+
     .hero-blurb {
         font-size: 1.05rem;
         line-height: 1.6;
         color: rgb(255 255 255 / 0.8);
         margin-bottom: var(--spacer-4);
+        animation: rise-in 0.6s ease-out 0.35s backwards;
     }
 
     .hero-actions {
         display: flex;
         flex-wrap: wrap;
         gap: var(--spacer-3);
+
+        & > * {
+            animation: rise-in 0.5s ease-out backwards;
+        }
+
+        @for $i from 1 through 3 {
+            & > :nth-child(#{$i}) {
+                animation-delay: #{450 + ($i - 1) * 70}ms;
+            }
+        }
     }
 
     .hero-btn {
+        position: relative;
+        overflow: hidden;
         display: inline-flex;
         align-items: center;
         gap: var(--spacer-2);
@@ -35,12 +59,27 @@
         font-weight: bold;
         transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 
+        // Same reflective sheen as the version cards
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: linear-gradient(105deg, transparent 30%, rgb(255 250 235 / 0.3) 50%, transparent 70%);
+            transform: translateX(-100%);
+        }
+
         &:hover,
         &:focus-visible {
             background: color-mix(in srgb, var(--bs-body-bg) 75%, white 10%);
             border-color: rgb(255 255 255 / 0.4);
             transform: translateY(-2px);
             color: var(--bs-white);
+
+            &::after {
+                transform: translateX(100%);
+                transition: transform 0.6s ease;
+            }
         }
     }
 

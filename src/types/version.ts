@@ -13,4 +13,6 @@ export type Version = {
     available: boolean,
     // 'wip' versions are shown on the homepage but are not linked. Defaults to 'live'.
     status?: 'live' | 'wip',
+    // Featured versions get a wider, highlighted card on large screens
+    featured?: boolean,
 }

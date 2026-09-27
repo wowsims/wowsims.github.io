@@ -1,4 +1,10 @@
 .homepage-footer {
+    // Pinned to the bottom of the viewport; `.homepage-main` reserves room for it
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
     border-top: 1px solid rgb(255 255 255 / 0.08);
     background: rgb(from var(--bs-body-bg) r g b / 0.9);
     font-size: 0.8rem;
@@ -9,8 +15,8 @@
         flex-wrap: wrap;
         justify-content: center;
         gap: var(--spacer-2);
-        padding-top: var(--spacer-3);
-        padding-bottom: var(--spacer-3);
+        padding-top: var(--spacer-2);
+        padding-bottom: var(--spacer-2);
         text-align: center;
     }
 

@@ -95,10 +95,19 @@ body {
 	}
 }
 
+:root {
+	// Space reserved for the fixed footer (it wraps to two lines on small screens)
+	--footer-height: 2.5rem;
+
+	@include media-breakpoint-down(sm) {
+		--footer-height: 4rem;
+	}
+}
+
 .homepage-main {
 	flex: 1;
 	padding-top: var(--spacer-5);
-	padding-bottom: var(--spacer-5);
+	padding-bottom: calc(var(--spacer-5) + var(--footer-height));
 }
 
 button {
@@ -241,4 +250,22 @@ kbd {
 .py-gap {
 	@extend .pt-gap;
 	@extend .pb-gap;
+}
+
+@keyframes rise-in {
+	from {
+		opacity: 0;
+		transform: translateY(16px);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		animation-delay: 0ms !important;
+		transition-duration: 0.01ms !important;
+	}
 }

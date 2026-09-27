@@ -11,8 +11,8 @@ function App() {
       <main className="homepage-main page-container">
         <Welcome />
         <div className="version-grid">
-          {getVersions().map(version => (
-            <VersionCard version={version} key={version.acronym} />
+          {getVersions().map((version, index) => (
+            <VersionCard version={version} index={index} key={version.acronym} />
           ))}
         </div>
       </main>

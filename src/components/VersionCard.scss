@@ -18,6 +18,9 @@
     isolation: isolate;
     box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 0.35);
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    // Staggered entrance. `backwards` so the finished animation doesn't override the hover transform
+    animation: rise-in 0.5s ease-out backwards;
+    animation-delay: calc(var(--i, 0) * 70ms + 300ms);
 
     // Theme-colored accent bar
     &::before {
@@ -68,6 +71,37 @@
         color: var(--expansion-color);
         text-transform: uppercase;
         font-size: 0.7rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5em;
+    }
+
+    // Pulsing "live activity" dot on the badge
+    .version-card-badge-dot {
+        position: relative;
+        width: 0.5em;
+        height: 0.5em;
+        border-radius: 50%;
+        background: var(--expansion-color);
+
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: var(--expansion-color);
+            animation: badge-ping 1.6s ease-out infinite;
+        }
+    }
+
+    // Reflective sheen that sweeps across the card
+    .version-card-sheen {
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        pointer-events: none;
+        background: linear-gradient(105deg, transparent 30%, rgb(255 250 235 / 0.28) 50%, transparent 70%);
+        transform: translateX(-100%);
     }
 
     .version-card-logo-container {
@@ -118,6 +152,11 @@ a.version-card {
         .version-card-cover {
             transform: scale(1.05);
         }
+
+        .version-card-sheen {
+            transform: translateX(100%);
+            transition: transform 0.8s ease;
+        }
     }
 
     &:focus-visible {
@@ -131,5 +170,50 @@ a.version-card {
 
     .version-card-cover {
         filter: grayscale(0.6) brightness(0.7);
+    }
+}
+
+// Highlighted card for the headline version: wider on large screens, with a sheen that replays on its own
+.version-card-featured {
+    @include media-breakpoint-up(lg) {
+        grid-column: span 2;
+        aspect-ratio: auto;
+        // Take the row height from the regular cards beside it instead of from our own content.
+        // The min-height covers layouts where this card sits alone in its row.
+        contain: size;
+        min-height: 12rem;
+
+        .version-card-logo {
+            max-height: min(9rem, 100%);
+        }
+
+        .version-card-title {
+            font-size: 1.6rem;
+        }
+    }
+
+    .version-card-sheen {
+        animation: sheen-loop 6s ease-in-out 1.5s infinite;
+    }
+
+    &.version-card-wip .version-card-cover {
+        filter: grayscale(0.15) brightness(0.85);
+    }
+}
+
+@keyframes sheen-loop {
+    0% {
+        transform: translateX(-100%);
+    }
+    20%,
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes badge-ping {
+    to {
+        transform: scale(2.8);
+        opacity: 0;
     }
 }
