@@ -1,6 +1,19 @@
+import { DOMAIN } from '../config'
 import { Version } from '../types/version'
+import ForeverCover from '../assets/img/forever_cover.webp'
+import ForeverLogo from '../assets/img/forever_logo.webp'
 
 const versions: Version[] = [
+    {
+        title: 'Forever',
+        acronym: 'Forever',
+        description: 'Simulations for World of Warcraft®: Forever.',
+        coverSrc: ForeverCover,
+        logoSrc: ForeverLogo,
+        themeColorHex: '#4fc3f7',
+        available: true,
+        status: 'wip',
+    },
     {
         title: 'Mists of Pandaria',
         acronym: 'MoP',
@@ -13,7 +26,7 @@ const versions: Version[] = [
     {
         title: 'Cataclysm',
         acronym: 'Cata',
-        description: 'Simulations for World of Warcraft®: Mists of Pandaria Classic™.',
+        description: 'Simulations for World of Warcraft®: Cataclysm Classic™.',
         coverSrc: '/cata/assets/img/cata.jpg',
         logoSrc: 'https://warcraft.wiki.gg/images/thumb/7/78/WoW_Cataclysm_Classic_logo.png/1920px-WoW_Cataclysm_Classic_logo.png',
         themeColorHex: '#f94119',
@@ -22,7 +35,7 @@ const versions: Version[] = [
     {
         title: 'Season of Discovery',
         acronym: 'SoD',
-        description: 'Simulations for World of Warcraft® Classic: Season of Dicovery™.',
+        description: 'Simulations for World of Warcraft® Classic: Season of Discovery™.',
         coverSrc: '/sod/assets/img/sod.png',
         logoSrc: 'https://warcraft.wiki.gg/images/thumb/3/36/Season_of_Discovery_WoW_Classic.png/1920px-Season_of_Discovery_WoW_Classic.png',
         themeColorHex: '#f8b700',
@@ -41,15 +54,15 @@ const versions: Version[] = [
         title: 'The Burning Crusade',
         acronym: 'TBC',
         description: 'Simulations for World of Warcraft®: Burning Crusade Classic™.',
-        coverSrc: '/tbc/assets/tbc.jpg',
+        coverSrc: '/tbc/assets/img/tbc.jpg',
         logoSrc: 'https://warcraft.wiki.gg/images/thumb/e/e2/WoW_BC_Classic_logo.png/1280px-WoW_BC_Classic_logo.png',
         themeColorHex: '#a3e268',
         available: true,
     },
     {
-        title: 'Classic',
+        title: 'Classic/Vanilla',
         acronym: 'Classic',
-        description: 'Simulations for World of Warcraft®: Classic™ (Era / Anniversary).',
+        description: 'Simulations for World of Warcraft®: Classic™.',
         coverSrc: '/classic/assets/img/classic.jpg',
         logoSrc: 'https://warcraft.wiki.gg/images/thumb/a/af/WoW_Classic_logo.png/2560px-WoW_Classic_logo.png',
         themeColorHex: '#f8b700',
@@ -59,4 +72,13 @@ const versions: Version[] = [
 
 export const getVersions = (): Version[] => {
     return versions.slice().filter(version => version.available)
+}
+
+// Paths starting with a single `/` are hosted by the individual sim repos under DOMAIN.
+// Absolute URLs and bundled assets (which Vite serves from this site) are used as-is.
+export const resolveAssetUrl = (src: string): string => {
+    if (src.startsWith('/') && !src.startsWith('//') && !src.startsWith('/assets/') && !src.startsWith('/src/')) {
+        return `${DOMAIN}${src}`
+    }
+    return src
 }

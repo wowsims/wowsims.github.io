@@ -1,59 +1,41 @@
 .homepage-header {
     position: sticky;
     top: 0;
-    border-bottom: var(--border-default);
-    background: var(--bs-body-bg);
     z-index: 100;
+    border-bottom: 1px solid rgb(255 255 255 / 0.08);
+    background: rgb(from var(--bs-body-bg) r g b / 0.9);
 
-    .homepage-header-container {
-        @include media-breakpoint-up(lg) {
-            padding-top: calc(var(--container-padding) / 16);
-            padding-bottom: calc(var(--container-padding) / 16);
-        }
+    .page-container {
+        padding-top: var(--spacer-3);
+        padding-bottom: var(--spacer-3);
+    }
 
-        @include media-breakpoint-down(md) {
-            padding-top: var(--container-padding);
-            padding-bottom: var(--container-padding);
-        }
+    .navbar-nav {
+        gap: var(--spacer-4);
     }
 
     .wowsims-logo {
-        width: 6rem;
-
-        @include media-breakpoint-down(xxl) {
-            width: 4rem;
-        }
-
-        @include media-breakpoint-down(lg) {
-            width: 3rem;
-        }
+        width: 2.75rem;
     }
-    
+
     .wowsims-title {
-        margin: 0;
         display: flex;
         flex-direction: column;
-        font-size: 5rem;
-        line-height: 0.8;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1;
         color: var(--bs-brand);
-
-        @include media-breakpoint-down(xxl) {
-            font-size: 4rem;
-        }
-
-        @include media-breakpoint-down(lg) {
-            font-size: 3rem;
-        }
     }
-    
-    .expansion-title {
-        font-size: 35%;
-        margin-left: var(--spacer-2);
-        margin-top: var(--spacer-2);
-        margin-bottom: var(--spacer-2);
 
-        @include media-breakpoint-up(xxl) {
-            margin-left: var(--spacer-3);
-        }
+    .wowsims-subtitle {
+        font-size: 0.7rem;
+        font-weight: normal;
+        color: rgb(255 255 255 / 0.65);
+        margin-top: 0.2rem;
+    }
+
+    .curseforge-btn > img,
+    .patreon-btn > img {
+        height: 1.75rem;
     }
 }
