@@ -2,7 +2,7 @@
   "name": "wowsims.github.io",
   "private": true,
   "version": "1.0.0",
-  "homepage": "https://wowsims.github.io",
+  "homepage": "https://www.wowsims.com",
   "type": "module",
   "scripts": {
     "dev": "vite",

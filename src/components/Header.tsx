@@ -21,7 +21,7 @@ function Header() {
   )
 
   const brand = (
-    <a href="#" className="navbar-brand d-flex align-items-center p-0 m-0 gap-2">
+    <a href="/" className="navbar-brand d-flex align-items-center p-0 m-0 gap-2">
       <img className="wowsims-logo" src={WoWSimsLogo} alt="WoWSims Logo" />
       <span className="wowsims-title">
         WoWSims

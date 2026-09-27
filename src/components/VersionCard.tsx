@@ -37,7 +37,7 @@ function VersionCard({version, index}: Props) {
           )}
         </div>
         <div className="version-card-text">
-          <h3 className="version-card-title">{version.title}</h3>
+          <h2 className="version-card-title">{version.title}</h2>
           <p className="version-card-description">{version.description}</p>
         </div>
       </div>
