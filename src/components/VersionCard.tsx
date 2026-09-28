@@ -1,5 +1,4 @@
-import { DOMAIN } from "../config";
-import { resolveAssetUrl } from "../data/versions";
+import { getVersionUrl, resolveAssetUrl } from "../data/versions";
 import { Version } from "../types/version"
 import { WoWIcon } from "./WoWIcon";
 
@@ -62,7 +61,7 @@ function VersionCard({version, index}: Props) {
   }
 
   return (
-    <a className={className} style={style} href={`${DOMAIN}/${slug}/`}>
+    <a className={className} style={style} href={getVersionUrl(version)}>
       {content}
     </a>
   )

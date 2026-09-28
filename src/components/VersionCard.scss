@@ -26,8 +26,8 @@
     &::before {
         content: "";
         position: absolute;
-        inset: 0 0 auto 0;
-        height: 3px;
+        inset: 0;
+        width: calc(var(--card-radius) / 2);
         background: var(--expansion-color);
         z-index: 2;
     }

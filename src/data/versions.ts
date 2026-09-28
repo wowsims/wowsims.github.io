@@ -1,15 +1,13 @@
 import { DOMAIN } from '../config'
 import { Version } from '../types/version'
-import ForeverCover from '../assets/img/forever_cover.webp'
-import ForeverLogo from '../assets/img/forever_logo.webp'
 
 const versions: Version[] = [
     {
         title: 'Forever',
         acronym: 'Forever',
         description: 'Simulations for World of Warcraft®: Forever.',
-        coverSrc: ForeverCover,
-        logoSrc: ForeverLogo,
+        coverSrc: '/img/forever_cover.webp',
+        logoSrc: '/img/forever_logo.webp',
         themeColorHex: '#4fc3f7',
         available: true,
         status: 'wip',
@@ -75,11 +73,57 @@ export const getVersions = (): Version[] => {
     return versions.slice().filter(version => version.available)
 }
 
-// Paths starting with a single `/` are hosted by the individual sim repos under DOMAIN.
-// Absolute URLs and bundled assets (which Vite serves from this site) are used as-is.
+// Files in this site's own `public/img/` folder, served from whatever origin is rendering the page
+const LOCAL_ASSET_PREFIX = '/img/'
+
+const isRootRelative = (src: string): boolean => src.startsWith('/') && !src.startsWith('//')
+
+// Paths starting with a single `/` are hosted by the individual sim repos under DOMAIN, except for
+// this site's own `public/img/` files. Absolute URLs are used as-is.
 export const resolveAssetUrl = (src: string): string => {
-    if (src.startsWith('/') && !src.startsWith('//') && !src.startsWith('/assets/') && !src.startsWith('/src/')) {
+    if (isRootRelative(src) && !src.startsWith(LOCAL_ASSET_PREFIX)) {
         return `${DOMAIN}${src}`
     }
     return src
 }
+
+// Like `resolveAssetUrl`, but always absolute, for URLs that are read from other sites
+const toAbsoluteUrl = (src: string): string => (isRootRelative(src) ? `${DOMAIN}${src}` : src)
+
+export const getVersionSlug = (version: Version): string => version.acronym.toLowerCase()
+
+export const getVersionUrl = (version: Version): string => `${DOMAIN}/${getVersionSlug(version)}/`
+
+// Shape of the public `/versions.json` manifest (emitted by the `versionsManifest` plugin in `vite.config.ts`)
+// that the individual sim sites fetch at runtime to link to each other. All URLs are absolute. Adding a field
+// is safe; renaming, removing or changing the meaning of one is breaking, so bump `schemaVersion` for that.
+// Consumers ignore manifests with a schema version they do not know.
+export type VersionsManifest = {
+    schemaVersion: 1,
+    homepage: string,
+    versions: {
+        slug: string,
+        title: string,
+        acronym: string,
+        url: string,
+        themeColor: string,
+        coverUrl?: string,
+        logoUrl?: string,
+        status: 'live' | 'wip',
+    }[],
+}
+
+export const buildVersionsManifest = (): VersionsManifest => ({
+    schemaVersion: 1,
+    homepage: DOMAIN,
+    versions: getVersions().map(version => ({
+        slug: getVersionSlug(version),
+        title: version.title,
+        acronym: version.acronym,
+        url: getVersionUrl(version),
+        themeColor: version.themeColorHex,
+        coverUrl: version.coverSrc && toAbsoluteUrl(version.coverSrc),
+        logoUrl: version.logoSrc && toAbsoluteUrl(version.logoSrc),
+        status: version.status ?? 'live',
+    })),
+})
