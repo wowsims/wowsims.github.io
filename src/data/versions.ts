@@ -6,11 +6,10 @@ const versions: Version[] = [
         title: 'Forever',
         acronym: 'Forever',
         description: 'Simulations for World of Warcraft®: Forever.',
-        coverSrc: '/img/forever_cover.webp',
+        coverSrc: '/forever/assets/img/forever_cover.webp',
         logoSrc: '/img/forever_logo.webp',
         themeColorHex: '#4fc3f7',
         available: true,
-        status: 'wip',
         featured: true,
     },
     {
