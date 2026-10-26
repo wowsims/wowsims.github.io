@@ -9,8 +9,8 @@ export const communities: CommunityGroup[] = [
         title: 'Forever Community Servers',
         links: [
             { name: 'WoW Forever NA', url: 'https://discord.gg/wowforeverna' },
-            { name: 'Forever EU PVE', url: 'https://discord.gg/JAQMAGUyft' },
-            { name: 'Forever EU PVP', url: 'https://discord.gg/foreverclassic' },
+            { name: 'WoW Forever EU PVE', url: 'https://discord.gg/JAQMAGUyft' },
+            { name: 'WoW Forever EU PVP', url: 'https://discord.gg/foreverclassic' },
         ],
     },
     {
