@@ -1,8 +1,10 @@
-import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faDiscord, faGithub, faPatreon } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Brand from './Brand'
-import { COPYRIGHT_HOLDER, COPYRIGHT_START_YEAR, DISCLAIMER, DISCORD_LINK, GITHUB_LINK, formatCopyright } from '../config'
+import { ADDON_LINK_TEXT } from './CurseforgeButton'
+import { WoWIcon } from './WoWIcon'
+import { ADDON_LINK, COPYRIGHT_HOLDER, COPYRIGHT_START_YEAR, DISCLAIMER, DISCORD_LINK, GITHUB_LINK, PATREON_LINK, formatCopyright } from '../config'
 import { communities } from '../data/communities'
 import { getVersions, getVersionUrl } from '../data/versions'
 
@@ -24,6 +26,12 @@ function Footer() {
                             </a>
                             <a href={GITHUB_LINK} {...externalLinkProps} title="Contribute on GitHub" aria-label="GitHub">
                                 <FontAwesomeIcon icon={faGithub} size="lg" />
+                            </a>
+                            <a href={ADDON_LINK} {...externalLinkProps} title={ADDON_LINK_TEXT} aria-label={ADDON_LINK_TEXT}>
+                                <WoWIcon width="1.25em" height="1.25em" />
+                            </a>
+                            <a href={PATREON_LINK} {...externalLinkProps} title="Become a Patron!" aria-label="Patreon">
+                                <FontAwesomeIcon icon={faPatreon} size="lg" />
                             </a>
                         </div>
                     </div>
