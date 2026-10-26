@@ -1,9 +1,5 @@
-import { faDiscord, faGithub, faPatreon } from '@fortawesome/free-brands-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
 import Brand from './Brand'
 import { ADDON_LINK_TEXT } from './CurseforgeButton'
-import { WoWIcon } from './WoWIcon'
 import { ADDON_LINK, COPYRIGHT_HOLDER, COPYRIGHT_START_YEAR, DISCLAIMER, DISCORD_LINK, GITHUB_LINK, PATREON_LINK, formatCopyright } from '../config'
 import { communities } from '../data/communities'
 import { getVersions, getVersionUrl } from '../data/versions'
@@ -13,6 +9,13 @@ const SPLIT_GROUP_SIZE = 6
 
 const externalLinkProps = { target: '_blank', rel: 'noopener noreferrer' }
 
+const SOCIAL_LINKS = [
+    { href: DISCORD_LINK, label: 'Discord', title: 'Join our Discord' },
+    { href: GITHUB_LINK, label: 'GitHub', title: 'Contribute on GitHub' },
+    { href: ADDON_LINK, label: 'Addon', title: ADDON_LINK_TEXT },
+    { href: PATREON_LINK, label: 'Patreon', title: 'Become a Patron!' },
+]
+
 function Footer() {
     return (
         <footer className="homepage-footer">
@@ -20,27 +23,13 @@ function Footer() {
                 <div className="homepage-footer-columns">
                     <div className="homepage-footer-brand">
                         <Brand />
-                        <ul className="homepage-footer-links">
-                            <li>
-                                <a href={DISCORD_LINK} {...externalLinkProps} className="homepage-footer-social">
-                                    <FontAwesomeIcon icon={faDiscord} fixedWidth /> Discord
-                                </a>
-                            </li>
-                            <li>
-                                <a href={GITHUB_LINK} {...externalLinkProps} className="homepage-footer-social">
-                                    <FontAwesomeIcon icon={faGithub} fixedWidth /> GitHub
-                                </a>
-                            </li>
-                            <li>
-                                <a href={ADDON_LINK} {...externalLinkProps} className="homepage-footer-social" title={ADDON_LINK_TEXT}>
-                                    <WoWIcon width="1.25em" height="1em" /> Addon
-                                </a>
-                            </li>
-                            <li>
-                                <a href={PATREON_LINK} {...externalLinkProps} className="homepage-footer-social">
-                                    <FontAwesomeIcon icon={faPatreon} fixedWidth /> Patreon
-                                </a>
-                            </li>
+                        <ul className="homepage-footer-socials">
+                            {SOCIAL_LINKS.map(({ href, label, title }, index) => (
+                                <li key={href}>
+                                    {index > 0 && <span className="homepage-footer-sep" aria-hidden="true">·</span>}
+                                    <a href={href} {...externalLinkProps} title={title}>{label}</a>
+                                </li>
+                            ))}
                         </ul>
                     </div>
                     <nav className="homepage-footer-group" aria-labelledby="homepage-footer-sims">

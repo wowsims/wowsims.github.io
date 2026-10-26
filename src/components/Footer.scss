@@ -20,9 +20,14 @@
         gap: var(--spacer-4);
         padding-block: var(--spacer-5);
 
-        @include media-breakpoint-up(lg) {
-            // Brand, Sims, then the community groups; the wide group takes two tracks
-            grid-template-columns: 1.5fr 1fr 1fr 2fr;
+        // The brand on its own row, then the three link groups
+        @include media-breakpoint-up(md) {
+            grid-template-columns: 1fr 1fr 1.5fr;
+        }
+
+        // Brand, Sims, then the community groups, all on one row
+        @include media-breakpoint-up(xl) {
+            grid-template-columns: 2fr 1fr 1.25fr 1.5fr;
             gap: var(--spacer-5);
         }
     }
@@ -33,7 +38,7 @@
         gap: var(--spacer-3);
         grid-column: 1 / -1;
 
-        @include media-breakpoint-up(lg) {
+        @include media-breakpoint-up(xl) {
             grid-column: auto;
         }
 
@@ -42,10 +47,24 @@
         }
     }
 
-    .homepage-footer-social {
-        display: inline-flex;
-        align-items: center;
+    .homepage-footer-socials {
+        display: flex;
+        flex-wrap: wrap;
         gap: var(--spacer-2);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: var(--spacer-2);
+        }
+
+        .homepage-footer-sep {
+            display: inline;
+            color: rgb(255 255 255 / 0.35);
+        }
     }
 
     .homepage-footer-heading {
@@ -73,7 +92,7 @@
             column-gap: var(--spacer-4);
         }
 
-        @include media-breakpoint-up(lg) {
+        @include media-breakpoint-up(md) {
             grid-column: auto;
         }
     }
