@@ -101,19 +101,10 @@ body {
 	}
 }
 
-:root {
-	// Space reserved for the fixed footer (it wraps to two lines on small screens)
-	--footer-height: 2.5rem;
-
-	@include media-breakpoint-down(sm) {
-		--footer-height: 4rem;
-	}
-}
-
 .homepage-main {
 	flex: 1;
 	padding-top: var(--spacer-5);
-	padding-bottom: calc(var(--spacer-5) + var(--footer-height));
+	padding-bottom: var(--spacer-5);
 }
 
 button {

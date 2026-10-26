@@ -1,5 +1,6 @@
-import { DOMAIN } from '../config'
+import { COPYRIGHT_HOLDER, COPYRIGHT_START_YEAR, DISCLAIMER, DOMAIN } from '../config'
 import { Version } from '../types/version'
+import { CommunityGroup, communities } from './communities'
 
 const versions: Version[] = [
     {
@@ -110,6 +111,15 @@ export type VersionsManifest = {
         logoUrl?: string,
         status: 'live' | 'wip',
     }[],
+    // Footer text every site shows as-is, in English. Sites render the copyright line as
+    // `© {copyrightStartYear}-{current year} {copyrightHolder}`, the same as `formatCopyright` in `src/config.ts`.
+    legal: {
+        copyrightStartYear: number,
+        copyrightHolder: string,
+        disclaimer: string,
+    },
+    // Partner Discords, in display order, each group shown under its title
+    communities: CommunityGroup[],
 }
 
 export const buildVersionsManifest = (): VersionsManifest => ({
@@ -125,4 +135,10 @@ export const buildVersionsManifest = (): VersionsManifest => ({
         logoUrl: version.logoSrc && toAbsoluteUrl(version.logoSrc),
         status: version.status ?? 'live',
     })),
+    legal: {
+        copyrightStartYear: COPYRIGHT_START_YEAR,
+        copyrightHolder: COPYRIGHT_HOLDER,
+        disclaimer: DISCLAIMER,
+    },
+    communities,
 })
