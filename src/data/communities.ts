@@ -8,7 +8,7 @@ export type CommunityGroup = {
 
 export const communities: CommunityGroup[] = [
     {
-        title: 'Forever Community Servers',
+        title: 'Forever Community Discords',
         links: [
             { name: 'WoW Forever NA', url: 'https://discord.gg/wowforeverna' },
             { name: 'WoW Forever EU PVE', url: 'https://discord.gg/JAQMAGUyft' },
