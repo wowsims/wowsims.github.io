@@ -2,7 +2,7 @@ import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import PatreonButton from './PatreonButton'
 
-import WoWSimsLogo from '../assets/img/WoW-Simulator-Icon.png';
+import Brand from './Brand';
 import CurseforgeButton from './CurseforgeButton';
 import { DISCORD_LINK, GITHUB_LINK } from '../config';
 
@@ -20,15 +20,7 @@ function Header() {
     </>
   )
 
-  const brand = (
-    <a href="/" className="navbar-brand d-flex align-items-center p-0 m-0 gap-2">
-      <img className="wowsims-logo" src={WoWSimsLogo} alt="WoWSims Logo" />
-      <span className="wowsims-title">
-        WoWSims
-        <small className="wowsims-subtitle">World of Warcraft Simulations</small>
-      </span>
-    </a>
-  )
+  const brand = <Brand className="navbar-brand" />
 
   return (
     <header className="homepage-header">
