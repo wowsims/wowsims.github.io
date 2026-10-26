@@ -25,9 +25,10 @@
             grid-template-columns: 1fr 1fr 1.5fr;
         }
 
-        // Brand, Sims, then the community groups, all on one row
+        // Brand, Sims, then the community groups, all on one row; the link groups take
+        // the width of their links and the brand takes the rest
         @include media-breakpoint-up(xl) {
-            grid-template-columns: 2fr 1fr 1.25fr 1.5fr;
+            grid-template-columns: minmax(0, 1fr) repeat(3, max-content);
             gap: var(--spacer-5);
         }
     }
