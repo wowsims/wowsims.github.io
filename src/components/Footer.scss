@@ -42,10 +42,10 @@
         }
     }
 
-    .homepage-footer-socials {
-        display: flex;
-        gap: var(--spacer-3);
-        font-size: 1.1rem;
+    .homepage-footer-social {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--spacer-2);
     }
 
     .homepage-footer-heading {

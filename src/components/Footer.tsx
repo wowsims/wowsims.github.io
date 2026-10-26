@@ -20,20 +20,28 @@ function Footer() {
                 <div className="homepage-footer-columns">
                     <div className="homepage-footer-brand">
                         <Brand />
-                        <div className="homepage-footer-socials">
-                            <a href={DISCORD_LINK} {...externalLinkProps} title="Join our Discord" aria-label="Discord">
-                                <FontAwesomeIcon icon={faDiscord} size="lg" />
-                            </a>
-                            <a href={GITHUB_LINK} {...externalLinkProps} title="Contribute on GitHub" aria-label="GitHub">
-                                <FontAwesomeIcon icon={faGithub} size="lg" />
-                            </a>
-                            <a href={ADDON_LINK} {...externalLinkProps} title={ADDON_LINK_TEXT} aria-label={ADDON_LINK_TEXT}>
-                                <WoWIcon width="1.25em" height="1.25em" />
-                            </a>
-                            <a href={PATREON_LINK} {...externalLinkProps} title="Become a Patron!" aria-label="Patreon">
-                                <FontAwesomeIcon icon={faPatreon} size="lg" />
-                            </a>
-                        </div>
+                        <ul className="homepage-footer-links">
+                            <li>
+                                <a href={DISCORD_LINK} {...externalLinkProps} className="homepage-footer-social">
+                                    <FontAwesomeIcon icon={faDiscord} fixedWidth /> Discord
+                                </a>
+                            </li>
+                            <li>
+                                <a href={GITHUB_LINK} {...externalLinkProps} className="homepage-footer-social">
+                                    <FontAwesomeIcon icon={faGithub} fixedWidth /> GitHub
+                                </a>
+                            </li>
+                            <li>
+                                <a href={ADDON_LINK} {...externalLinkProps} className="homepage-footer-social" title={ADDON_LINK_TEXT}>
+                                    <WoWIcon width="1.25em" height="1em" /> Exporter Addon
+                                </a>
+                            </li>
+                            <li>
+                                <a href={PATREON_LINK} {...externalLinkProps} className="homepage-footer-social">
+                                    <FontAwesomeIcon icon={faPatreon} fixedWidth /> Patreon
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                     <nav className="homepage-footer-group" aria-labelledby="homepage-footer-sims">
                         <h2 id="homepage-footer-sims" className="homepage-footer-heading">Sims</h2>
