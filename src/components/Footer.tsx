@@ -33,7 +33,7 @@ function Footer() {
                             </li>
                             <li>
                                 <a href={ADDON_LINK} {...externalLinkProps} className="homepage-footer-social" title={ADDON_LINK_TEXT}>
-                                    <WoWIcon width="1.25em" height="1em" /> Exporter Addon
+                                    <WoWIcon width="1.25em" height="1em" /> Addon
                                 </a>
                             </li>
                             <li>
