@@ -2,6 +2,8 @@
 export type CommunityGroup = {
     title: string,
     links: { name: string, url: string }[],
+    // How many columns the group's links take (`.wowsims-footer-group-split` in public/footer.css). Defaults to 1.
+    columns?: 1 | 2,
 }
 
 export const communities: CommunityGroup[] = [
@@ -15,6 +17,7 @@ export const communities: CommunityGroup[] = [
     },
     {
         title: 'Class Discords',
+        columns: 2,
         links: [
             { name: 'Death Knight', url: 'https://discord.gg/yGbC7dRxEs' },
             { name: 'Druid', url: 'https://discord.gg/SMwmrBV' },
