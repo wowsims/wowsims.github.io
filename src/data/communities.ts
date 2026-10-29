@@ -13,6 +13,7 @@ export const communities: CommunityGroup[] = [
             { name: 'WoW Forever NA', url: 'https://discord.gg/wowforeverna' },
             { name: 'WoW Forever EU PVE', url: 'https://discord.gg/JAQMAGUyft' },
             { name: 'WoW Forever EU PVP', url: 'https://discord.gg/foreverclassic' },
+            { name: 'WoW Forever Oceania', url: 'https://discord.com/invite/wowoce' },
         ],
     },
     {
